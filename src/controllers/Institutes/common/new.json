@@ -1,0 +1,120 @@
+{
+    "basicHTMLTags": [
+      {
+        "tag": "<html>",
+        "description": "The <html> tag represents the root of an HTML document. All other elements must be descendants of this element.",
+        "example": "<!DOCTYPE html>\n<html>\n</html>"
+      },
+      {
+        "tag": "<head>",
+        "description": "The <head> element contains meta-information about the HTML document, such as its title and links to stylesheets.",
+        "example": "<html>\n  <head>\n    <title>My First Page</title>\n  </head>\n</html>"
+      },
+      {
+        "tag": "<title>",
+        "description": "The <title> tag defines the title of the document, which appears in the browser's title bar or tab.",
+        "example": "<head>\n  <title>My First Page</title>\n</head>"
+      },
+      {
+        "tag": "<body>",
+        "description": "The <body> tag contains all the contents of an HTML document, such as text, images, and links.",
+        "example": "<body>\n  <h1>Welcome to My Website</h1>\n  <p>This is a paragraph of text on my webpage.</p>\n</body>"
+      },
+      {
+        "tag": "<h1> to <h6>",
+        "description": "These tags represent headings, with <h1> being the highest level (largest) and <h6> the lowest (smallest).",
+        "example": "<h1>Main Heading</h1>\n<h2>Subheading</h2>\n<h3>Sub-subheading</h3>"
+      },
+      {
+        "tag": "<p>",
+        "description": "The <p> tag is used to define a paragraph of text.",
+        "example": "<p>This is a paragraph of text.</p>"
+      },
+      {
+        "tag": "<a>",
+        "description": "The <a> tag defines a hyperlink, used to link from one page to another. The href attribute specifies the URL of the page the link goes to.",
+        "example": "<a href=\"https://www.example.com\">Visit Example.com</a>"
+      },
+      {
+        "tag": "<img>",
+        "description": "The <img> tag is used to embed an image in an HTML page. The src attribute specifies the path to the image, and the alt attribute provides alternative text for the image.",
+        "example": "<img src=\"image.jpg\" alt=\"Description of Image\">"
+      },
+      {
+        "tag": "<div>",
+        "description": "The <div> tag is a block-level container used to group elements together for styling or layout purposes.",
+        "example": "<div>\n  <h1>Title</h1>\n  <p>This is a paragraph inside a div.</p>\n</div>"
+      },
+      {
+        "tag": "<span>",
+        "description": "The <span> tag is an inline container used to group elements together without affecting the layout. It's commonly used for styling a portion of text.",
+        "example": "<p>This is a <span style=\"color: red;\">red</span> word.</p>"
+      },
+      {
+        "tag": "<ul>, <ol>, and <li>",
+        "description": "The <ul> tag defines an unordered list, <ol> defines an ordered list, and <li> defines a list item.",
+        "example": "<ul>\n  <li>Item 1</li>\n  <li>Item 2</li>\n  <li>Item 3</li>\n</ul>\n\n<ol>\n  <li>First Item</li>\n  <li>Second Item</li>\n  <li>Third Item</li>\n</ol>"
+      },
+      {
+        "tag": "<table>, <tr>, <th>, and <td>",
+        "description": "These tags are used to create tables. <table> defines the table, <tr> defines a table row, <th> defines a table header, and <td> defines a table cell.",
+        "example": "<table>\n  <tr>\n    <th>Header 1</th>\n    <th>Header 2</th>\n  </tr>\n  <tr>\n    <td>Data 1</td>\n    <td>Data 2</td>\n  </tr>\n</table>"
+      },
+      {
+        "tag": "<form>",
+        "description": "The <form> tag is used to create an HTML form for user input. It can contain elements like <input>, <textarea>, and <button>.",
+        "example": "<form action=\"/submit\" method=\"post\">\n  <label for=\"name\">Name:</label>\n  <input type=\"text\" id=\"name\" name=\"name\">\n  <input type=\"submit\" value=\"Submit\">\n</form>"
+      },
+      {
+        "tag": "<input>",
+        "description": "The <input> tag is used to create interactive controls in an HTML form. It can be used to create text fields, checkboxes, radio buttons, etc.",
+        "example": "<input type=\"text\" id=\"username\" name=\"username\">\n<input type=\"checkbox\" id=\"subscribe\" name=\"subscribe\" value=\"newsletter\">"
+      },
+      {
+        "tag": "<button>",
+        "description": "The <button> tag is used to create a clickable button. It can contain text or images.",
+        "example": "<button type=\"button\">Click Me</button>"
+      },
+      {
+        "tag": "<textarea>",
+        "description": "The <textarea> tag is used to create a multi-line text input control.",
+        "example": "<textarea id=\"message\" name=\"message\" rows=\"4\" cols=\"50\">\n  Your message here...\n</textarea>"
+      },
+      {
+        "tag": "<link>",
+        "description": "The <link> tag is used to link to external resources, such as stylesheets.",
+        "example": "<link rel=\"stylesheet\" href=\"styles.css\">"
+      },
+      {
+        "tag": "<meta>",
+        "description": "The <meta> tag provides metadata about the HTML document, such as character set, author, and viewport settings.",
+        "example": "<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+      },
+      {
+        "tag": "<script>",
+        "description": "The <script> tag is used to embed or reference JavaScript code in an HTML document.",
+        "example": "<script src=\"script.js\"></script>"
+      },
+      {
+        "tag": "<style>",
+        "description": "The <style> tag is used to define internal CSS styles for an HTML document.",
+        "example": "<style>\n  body {\n    background-color: lightblue;\n  }\n</style>"
+      }
+    ],
+    "wordDocumentFormatting": {
+      "font": {
+        "name": "Courier New",
+        "size": "10pt"
+      },
+      "backgroundShading": "#f5f5f5",
+      "indentation": "Tab or Increase Indent button",
+      "lineSpacing": "1.0"
+    },
+    "pageManagement": {
+      "pageBreaks": "Insert > Page Break",
+      "consistentHeadings": "Use the same style for headings",
+      "headersAndFooters": "Insert > Header or Footer",
+      "tableOfContents": "References > Table of Contents"
+    }
+  }
+  

@@ -1,0 +1,833 @@
+[
+  {
+    "id": 1,
+    "identity": "institute",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_institute"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_institute"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_institute"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_institute"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 9,
+    "identity": "faq-category",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_faq-category"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_faq-category"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_faq-category"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_faq-category"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 15,
+    "identity": "permissions",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_permissions"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_permissions"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_permissions"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_permissions"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 5,
+    "identity": "subscription-features",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_subscription_features"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_subscription_features"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_subscrption_features"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_subscription_features"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 13,
+    "identity": "users",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_users"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_users"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_users"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_users"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 2,
+    "identity": "faq",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_faq"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_faq"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_faq"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_faq"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 6,
+    "identity": "institute-admin",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_institute-admin"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_institute-admin"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_institute-admin"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_institute-admin"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 12,
+    "identity": "roles",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_roles"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_roles"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_roles"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_roles"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 10,
+    "identity": "notification",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_notification"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_notification"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_notification"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_notification"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 8,
+    "identity": "subscription-payments",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_subscription-payments"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_subscription-payments"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_subscription-payments"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_subscription-payments"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 3,
+    "identity": "subscription-plans",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_subscription-plans"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_subscription-plans"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_subscription-plans"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_subscription-plans"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 7,
+    "identity": "institute-primary-branch",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_institute-primary-branch"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_institute-primary-branch"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_institute-primary-branch"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_institute-primary-branch"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 4,
+    "identity": "ticket",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_ticket"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_ticket"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_ticket"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_ticket"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 11,
+    "identity": "chat",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_chat"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_chat"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_chat"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_chat"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "id": 14,
+    "identity": "feature",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_feature"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_feature"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_feature"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_feature"
+    },
+    "urls": [],
+    "platform_role": 1
+  },
+  {
+    "identity": "institute_all",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_institute_all"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_institute_all"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_institute_all"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_institute_all"
+    },
+    "urls": [],
+    "platform_role": 1,
+    "id": 16
+  },
+  {
+    "identity": "dashboard",
+    "create_permission": {
+      "permission": false,
+      "code": null
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_dashboard"
+    },
+    "update_permission": {
+      "permission": false,
+      "code": null
+    },
+    "delete_permission": {
+      "permission": false,
+      "code": null
+    },
+    "urls": [],
+    "is_active": true,
+    "is_delete": true,
+    "id": 18
+  },
+  {
+    "id": 20,
+    "identity": "institute-branches",
+    "create_permission": {
+      "permission": false,
+      "code": "cannot_create_institute_branches"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_institute_branches"
+    },
+    "update_permission": {
+      "permission": false,
+      "code": "cannot_update_institute_branches"
+    },
+    "delete_permission": {
+      "permission": false,
+      "code": "cannot_delete_institute_branches"
+    },
+    "urls": [],
+    "platform_role": 1,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 21,
+    "identity": "subscription-features",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_subscription_features"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_subscription_features"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_subscrption_features"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_subscription_features"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 22,
+    "identity": "institute",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_institute"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_institute"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_institute"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_institute"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 23,
+    "identity": "subscription-plans",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_subscription-plans"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_subscription-plans"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_subscription-plans"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_subscription-plans"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 24,
+    "identity": "institute-primary-branch",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_institute-primary-branch"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_institute-primary-branch"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_institute-primary-branch"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_institute-primary-branch"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 25,
+    "identity": "users",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_users"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_users"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_users"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_users"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 26,
+    "identity": "faq",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_faq"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_faq"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_faq"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_faq"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 27,
+    "identity": "institute-admin",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_institute-admin"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_institute-admin"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_institute-admin"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_institute-admin"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 28,
+    "identity": "roles",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_roles"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_roles"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_roles"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_roles"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 29,
+    "identity": "faq-category",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_faq-category"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_faq-category"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_faq-category"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_faq-category"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 30,
+    "identity": "subscription-payments",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_subscription-payments"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_subscription-payments"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_subscription-payments"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_subscription-payments"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 31,
+    "identity": "ticket",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_ticket"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_ticket"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_ticket"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_ticket"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 32,
+    "identity": "notification",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_notification"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_notification"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_notification"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_notification"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 33,
+    "identity": "chat",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_chat"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_chat"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_chat"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_chat"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 34,
+    "identity": "feature",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_feature"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_feature"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_feature"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_feature"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 35,
+    "identity": "permissions",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_permissions"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_permissions"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_permissions"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_permissions"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 36,
+    "identity": "institute_all",
+    "create_permission": {
+      "permission": true,
+      "code": "can_create_institute_all"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_institute_all"
+    },
+    "update_permission": {
+      "permission": true,
+      "code": "can_update_institute_all"
+    },
+    "delete_permission": {
+      "permission": true,
+      "code": "can_delete_institute_all"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 19,
+    "identity": "dashboard",
+    "create_permission": {
+      "permission": false,
+      "code": null
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_dashboard"
+    },
+    "update_permission": {
+      "permission": false,
+      "code": null
+    },
+    "delete_permission": {
+      "permission": false,
+      "code": null
+    },
+    "urls": [],
+    "platform_role": null,
+    "is_active": true,
+    "is_delete": true
+  },
+  {
+    "id": 17,
+    "identity": "institute-branches",
+    "create_permission": {
+      "permission": false,
+      "code": "cannot_create_institute_branches"
+    },
+    "read_permission": {
+      "permission": true,
+      "code": "can_read_institute_branches"
+    },
+    "update_permission": {
+      "permission": false,
+      "code": "cannot_update_institute_branches"
+    },
+    "delete_permission": {
+      "permission": false,
+      "code": "cannot_delete_institute_branches"
+    },
+    "urls": [],
+    "platform_role": 22,
+    "is_active": true,
+    "is_delete": true
+  }
+]

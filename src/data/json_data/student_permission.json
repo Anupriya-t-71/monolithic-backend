@@ -1,0 +1,508 @@
+[
+  {
+    "id": 75,
+    "identity": "Students",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [
+      "/student-management/students",
+      "/student-management/students/add"
+    ],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "a8c93b8d-be1c-4d60-9867-db1f2a38cb34"
+  },
+  {
+    "id": 76,
+    "identity": "Offline Classes",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_offline_classes"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "561efe08-a53b-4960-afec-ad89b8a7f1cc"
+  },
+  {
+    "id": 77,
+    "identity": "OfflineClass Details",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_offline_class_details"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "2058bcf0-aca2-40c8-9f82-b24bacd4a789"
+  },
+  {
+    "id": 78,
+    "identity": "Live Classes",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_live_classes"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "6f6ecf44-1416-425b-b7db-e960d632c03f"
+  },
+  {
+    "id": 79,
+    "identity": "LiveClass Details",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_live_classes_details"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "137c634f-0a99-42ee-b45a-6868978dbb56"
+  },
+  {
+    "id": 80,
+    "identity": "Student Attendances",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_student_attendances"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "3d430d6f-969d-413c-9d1e-cde7bced2b67"
+  },
+  {
+    "id": 81,
+    "identity": "Student Attendances Details",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_student_attendance_details"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "dd7613df-3b73-460f-bde7-ebe412d9fbef"
+  },
+  {
+    "id": 82,
+    "identity": "Student Tickets",
+    "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_student_tickets"
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_ticket_view"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "71040878-39b8-42e2-8a89-c57c328aebc9"
+  },
+  {
+    "id": 83,
+    "identity": "Community",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_community"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "70e62c4f-a59b-478a-ac1e-b038c2cd920d"
+  },
+  {
+    "id": 84,
+    "identity": "Student Notifications",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_notification_view"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "69ff94db-9167-46a7-9c05-3b4a3430bf0e"
+  },
+  {
+    "id": 85,
+    "identity": "Courses",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_course"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "388dcc50-33e3-4509-913f-63a471d0cf9f"
+  },
+  {
+    "id": 86,
+    "identity": "Course Details",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_course_details"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "da77f9a7-1f5a-4f52-88b0-c9abef59644d"
+  },
+  {
+    "id": 87,
+    "identity": "Study Materials",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_study_materials"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "403c4edd-cb3d-4d6b-a893-4f5366715b8f"
+  },
+  {
+    "id": 88,
+    "identity": "Course Notes",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_course_notes"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "84a2e959-9f29-4455-acf5-efca12997e88"
+  },
+  {
+    "id": 89,
+    "identity": "Course Modules",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_course_modules"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "0a7f2d2c-a0b5-47b8-ade3-d430a1b010be"
+  },
+  {
+    "id": 90,
+    "identity": "student_idcards",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_id_cards_view"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "0501f27c-ec83-4afe-b7d2-71168c49cda7"
+  },
+  {
+    "id": 91,
+    "identity": "Student Fees",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_fees_refund_management_view"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "e45637bb-3a51-4aea-8213-98e2c6936260"
+  },
+  {
+    "id": 92,
+    "identity": "Batches",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_batches"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "bd8b5bde-55f1-4efe-97d1-3f4dd6f888e0"
+  },
+  {
+    "id": 93,
+    "identity": "Student Certificates",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_certificates_view"
+    },
+    "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "urls": [],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "25a751ae-1a0e-4da5-8145-09c0b6dea98a"
+  },
+  {
+    "id": 94,
+    "identity": "Student_details",
+    "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+    },
+    "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_student_details"
+    },
+    "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_student_details"
+    },
+    "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_student_details"
+    },
+    "urls": [
+      "/student-management/students/:id",
+      "/student-management/students/:id/edit"
+    ],
+    "role": 3,
+    "is_active": true,
+    "is_delete": false,
+    "uuid": "9ba0dfde-9747-48b1-8ea9-db01ecf412c5"
+  }
+]

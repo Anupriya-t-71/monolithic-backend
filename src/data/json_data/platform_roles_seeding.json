@@ -1,0 +1,58 @@
+[
+  {
+    "identity": "super-admin",
+    "id": 1
+  },
+ 
+  {
+    "identity": "Developer",
+   
+    "id": 2
+  },
+  {
+    "identity": "Tester",
+   
+    "id": 3
+  },
+  {
+    "identity": "Engineer",
+    
+    "id": 4
+  },
+  {
+    "identity": "Test",
+    
+    "id": 5
+  },
+  {
+    "identity": "Final",
+   
+    "id": 6
+  },
+  {
+    "identity": "Institute Admin",
+   
+    "id": 7
+  },
+  {
+    "identity": "FinalTest",
+    
+    "id": 8
+  },
+  {
+    "identity": "TestTest",
+   
+    "id": 9
+  },
+  {
+    "identity": "Tested",
+    
+    "id": 10
+  },
+  {
+    "identity": "Testttt",
+  
+    "id": 11
+  }
+ 
+]

@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Panel</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-y: hidden;
+        }
+
+        /* Navbar styling */
+        header {
+            background-color: #4A90E2;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header h1 a {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header nav a:hover,
+        header nav a.active {
+            background-color: #0066CC;
+            color: #EAF3FF;
+            cursor: pointer;
+        }
+
+        /* Sidebar styling */
+        main {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+
+        }
+
+        h4 {
+            color: #000000;
+            padding-left: 20px;
+        }
+
+        .sidebar {
+            max-height: calc(100vh - 60px);
+            width: 280px;
+            background: linear-gradient(145deg, #4a90e2, #357ABD);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: 2px 0 4px rgba(0, 0, 7, 0.1);
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            color: #1c0581;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            padding: 12px 20px;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.872);
+            margin: 5px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .sidebar ul li:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+
+        .sidebar ul li.active {
+            background-color: #ffffff;
+            color: #4A90E2;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: inherit;
+
+        }
+
+        .sidebar ul li .icon {
+            font-size: 1.2rem;
+        }
+
+
+
+        #dynamic-section p.default {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #777;
+            margin-top: 200px;
+        }
+
+
+
+        #dynamic-section {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            overflow-y: auto;
+            max-height: calc(100vh - 60px);
+            border-left: 1px solid #ddd;
+
+        }
+
+
+        .logs-title {
+            margin-bottom: 20px;
+            color: #0056b3;
+        }
+
+        .logs-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .log-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            background: #fff;
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        .log-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .log-user .user-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .log-timestamp {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        /* Pagination */
+        .pagination {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .pagination button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .pagination button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Total Documents Style */
+        #total-documents {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+
+        .btn-pagination {
+            padding: 8px 15px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .btn-pagination:disabled {
+            background-color: #b0c4de;
+            cursor: not-allowed;
+        }
+
+        .btn-pagination:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+
+        .pagination-info {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Empty State */
+        .empty-message {
+            text-align: center;
+            color: #777;
+            font-style: italic;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #0056b3;
+        }
+
+        .upload-btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+
+        .upload-btn:hover {
+            background-color: #45a049;
+        }
+
+        .file-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .file-item button {
+            background-color: #ff3333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .file-item button:hover {
+            background-color: #e60000;
+        }
+
+        .file-item .view-btn {
+            background-color: #128dc6;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .file-item .view-btn:hover {
+            background-color: #0f7cb2;
+        }
+
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .pagination button {
+            background-color: #6da8df;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .pagination button:disabled {
+            background-color: #ddd;
+            color: #999;
+            cursor: not-allowed;
+        }
+
+
+        .permissions-section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #0056b3;
+        }
+
+        .loading-message,
+        .error-message {
+            text-align: center;
+            font-size: 1.2em;
+            color: #777;
+        }
+
+        /* List Styles */
+        .roles-list,
+        .features-list,
+        .permissions-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .role-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .role-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Action Buttons */
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            padding: 8px 12px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #218838;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+        /* Styling the search bar container */
+        #search-bar {
+            display: flex;
+            justify-content: flex-end;
+            /* Align to the right */
+            align-items: center;
+            margin-bottom: 20px;
+            /* Add spacing below the search bar */
+            gap: 8px;
+            /* Spacing between input and button */
+        }
+
+        /* Styling the search input */
+        #searchInput {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 200px;
+            /* Set a default width */
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        #searchInput:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            /* Add a subtle glow on focus */
+        }
+
+        /* Styling the search button */
+        #search-bar button {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #search-bar button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Optional: Make search bar responsive */
+        @media (max-width: 768px) {
+            #search-bar {
+                justify-content: center;
+                /* Center the search bar on smaller screens */
+            }
+
+            #searchInput {
+                width: 100%;
+                /* Allow the input to stretch fully */
+                max-width: 300px;
+                /* Set a maximum width */
+            }
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        /* Profile Container */
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            margin: 150px auto;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        h1 span {
+            color: #4CAF50;
+        }
+
+        .profile-info {
+            text-align: left;
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-info p {
+            margin: 0.5rem 0;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+
+        .staticmodal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .staticmodal-content {
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+            position: relative;
+        }
+
+        .staticclose {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 34px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .staticclose:hover {
+            color: rgb(0, 179, 255);
+        }
+
+        .permission-details.modern-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            max-width: 520px;
+            margin: 40px auto;
+            font-family: 'Inter', sans-serif;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .permission-details.modern-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .permission-details .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .permission-details .header h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0;
+            color: #333;
+        }
+
+        .permission-details .btn-secondary {
+            background-color: #f0f0f0;
+            color: black;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .permission-details .btn-secondary:hover {
+            background-color: #e0e0e0;
+        }
+
+        .permission-details .identity-info p {
+            margin: 8px 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .permission-details .permissions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .permission-details .checkbox-label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            gap: 8px;
+            cursor: pointer;
+            color: #444;
+        }
+
+        .permission-details input[type="checkbox"] {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+
+        .permission-details .btn-primary {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .permission-details .btn-primary:hover {
+            background-color: #357ABD;
+        }
+
+        .btn-primary:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .btn-primary.active {
+            background-color: #4a90e2;
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        #top-info {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="">Developer Panel</a></h1>
+        <nav>
+            {{!-- <a id="profileLink">Profile</a> --}}
+            <a id="logoutLink">Log Out</a>
+        </nav>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <h2>Collections</h2>
+            <ul>
+                <li><a href="#" id="static-files-menu">Static Files</a></li>
+            </ul>
+            {{!-- <h2>Permission Management</h2>
+
+
+            <h4>Roles</h4>
+            <ul>
+                <li><a href="#" id="Platroles-menu">PlatForm Roles</a></li>
+                <li><a href="#" id="Instroles-menu">Institute Roles</a></li>
+            </ul>
+
+            <h4>Features</h4>
+            <ul>
+                <li><a href="#" id="Platfeatures-menu">PlatForm Features</a></li>
+                <li><a href="#" id="Instfeatures-menu">Institute Features</a></li>
+            </ul>
+
+            <h4>Permissions</h4>
+            <ul>
+                <li><a href="#" id="Platpermissions-menu">Platform Permissions</a></li>
+                <li><a href="#" id="Instpermissions-menu">Institute Permissions</a></li>
+            </ul>
+
+            <h2>Activity Logs</h2>
+            <ul>
+                <li><a href="#" id="instituteAdminLink">Institute Admin</a></li>
+                <li><a href="#" id="teachingStaffLink">Teaching Staff</a></li>
+                <li><a href="#" id="studentLink">Institute Student</a></li>
+                <li><a href="#" id="developerLink">Developer</a></li>
+
+            </ul>
+            --}}
+
+        </aside>
+
+        <section id="dynamic-section">
+            <p class="default">Welcome to Developer Panel</p>
+
+        </section>
+    </main>
+
+
+    <script>
+
+        // Function to highlight the active sidebar menu
+        const sidebarLinks = document.querySelectorAll(".sidebar ul li");
+        sidebarLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                sidebarLinks.forEach(item => item.classList.remove("active"));
+                link.classList.add("active");
+            });
+        });
+
+
+        let currentPage = 1;
+
+        document.getElementById('static-files-menu').addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log("called", currentPage)
+            loadStaticFiles(currentPage);
+        });
+
+        {{!--document.getElementById('Platroles-menu').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadPlatFormRoles();
+                });
+
+                document.getElementById('Instroles-menu').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadInstituteRoles();
+                });
+
+
+                document.getElementById('Platfeatures-menu').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadPlatFormFeatures();
+                });
+
+                document.getElementById('Instfeatures-menu').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadInstituteFeatures();
+                });
+
+                document.getElementById('Platpermissions-menu').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadPlatFormPermissions();
+                });
+
+                document.getElementById('Instpermissions-menu').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadInstitutePermissions();
+                });
+                --}}
+
+        let currentLimit = parseInt(localStorage.getItem('filePageLimit')) || 10;
+
+        async function loadStaticFiles(page = 1, searchQuery = '', startDate = '', endDate = '', limit = currentLimit) {
+            const section = document.getElementById('dynamic-section');
+            section.innerHTML = '<p>Loading...</p>';
+
+            try {
+                currentLimit = limit;
+                localStorage.setItem('filePageLimit', limit);
+                let queryParams = `page=${page}&limit=${limit}&query=${searchQuery}`;
+                if (startDate) queryParams += `&startDate=${startDate}`;
+                if (endDate) queryParams += `&endDate=${endDate}`;
+
+                const response = await fetch(`/api/upload?${queryParams}`);
+                const data = await response.json();
+
+                const { files, totalDocuments, totalPages } = data;
+
+                section.innerHTML = `
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h3>Static Files</h3>
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 30px;">
+                <label for="limitSelect"></label>
+                <select id="limitSelect" onchange="changeLimit()" style="
+                    padding: 5px;
+                    border: none;
+                    cursor: pointer;
+                ">
+                    <option value="10" ${limit == 10 ? 'selected' : ''}>10</option>
+                    <option value="20" ${limit == 20 ? 'selected' : ''}>20</option>
+                    <option value="50" ${limit == 50 ? 'selected' : ''}>50</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="file-list">
+            ${files.map((file, index) => `
+                <div class="file-item">
+                    <span>${index + 1 + (page - 1) * limit}. ${file.file}</span>
+                    <div>
+                        <button class="view-btn" onclick="viewFile('${file.file}')">View</button>
+                        <button onclick="confirmDelete('${file._id}', '${file.file}')">Delete</button>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+        <div class="pagination">
+            <button onclick="loadStaticFiles(${page - 1}, '${searchQuery}', '${startDate}', '${endDate}', ${currentLimit})" ${page === 1 ? 'disabled' : ''}>
+                &laquo; Previous
+            </button>
+            <span>Page ${page} of ${totalPages}</span>
+            <button onclick="loadStaticFiles(${page + 1}, '${searchQuery}', '${startDate}', '${endDate}', ${currentLimit})" ${page === totalPages ? 'disabled' : ''}>
+                Next &raquo;
+            </button>
+        </div>
+        `;
+            } catch (error) {
+                section.innerHTML = '<p>Error loading files. Please try again later.</p>';
+                console.error(error);
+            }
+        }
+
+        function changeLimit() {
+            const newLimit = parseInt(document.getElementById('limitSelect').value);
+            localStorage.setItem('filePageLimit', newLimit);
+            currentLimit = newLimit;
+            loadStaticFiles(1, '', '', '', newLimit);
+        }
+
+
+        (function injectConfirmModal() {
+            if (document.getElementById('confirmModal')) return;
+
+            const modalHTML = `
+        <div id="confirmModal" class="modal-overlay" style="display:none">
+            <div class="modal-box">
+                <p id="confirmModalMessage" class="modal-message">Are you sure?</p>
+                <div id="modalStatusMessage" class="modal-status-message"></div>
+                <div class="modal-buttons">
+                    <button id="confirmYesBtn">Yes</button>
+                    <button id="confirmNoBtn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    `;
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+            const style = document.createElement('style');
+            style.textContent = `
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+        .modal-box {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .modal-buttons {
+            margin-top: 15px;
+        }
+        .modal-buttons button {
+            margin: 0 10px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #confirmYesBtn {
+            background-color: #e74c3c;
+            color: white;
+        }
+        #confirmNoBtn {
+            background-color: #ccc;
+        }
+        .modal-status-message {
+            margin-top: 10px;
+            font-size: 14px;
+            display: none;
+        }
+        .modal-status-message.success {
+            color: #27ae60;
+        }
+        .modal-status-message.error {
+            color: #e74c3c;
+        }
+    `;
+            document.head.appendChild(style);
+        })();
+
+
+        function showConfirmModal(message, onConfirm) {
+            const modal = document.getElementById('confirmModal');
+            const messageEl = document.getElementById('confirmModalMessage');
+            const statusEl = document.getElementById('modalStatusMessage');
+            const yesBtn = document.getElementById('confirmYesBtn');
+            const noBtn = document.getElementById('confirmNoBtn');
+
+            messageEl.textContent = message;
+            statusEl.style.display = 'none';
+            statusEl.textContent = '';
+            statusEl.className = 'modal-status-message';
+            modal.style.display = 'flex';
+
+            yesBtn.onclick = () => {
+                yesBtn.disabled = true;
+                noBtn.disabled = true;
+                if (typeof onConfirm === 'function') onConfirm(() => {
+                    yesBtn.disabled = false;
+                    noBtn.disabled = false;
+                });
+            };
+
+            noBtn.onclick = () => {
+                modal.style.display = 'none';
+            };
+        }
+
+
+        function confirmDelete(fileId, fileName) {
+            showConfirmModal(`Are you sure you want to delete the file: "${fileName}"?`, async (done) => {
+                const statusEl = document.getElementById('modalStatusMessage');
+                const token = localStorage.getItem("token");
+                try {
+                    const res = await fetch(`/api/delete/file/${fileId}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Token ${token}`,
+                        }
+                    });
+                    const result = await res.json();
+
+                    if (res.ok) {
+                        statusEl.textContent = "File deleted successfully!";
+                        statusEl.className = 'modal-status-message success';
+                        statusEl.style.display = 'block';
+                        loadStaticFiles(); // Refresh list
+
+                        setTimeout(() => {
+                            document.getElementById('confirmModal').style.display = 'none';
+                        }, 1500);
+                    } else {
+                        statusEl.textContent = result.message || "Failed to delete file.";
+                        statusEl.className = 'modal-status-message error';
+                        statusEl.style.display = 'block';
+                        done(); // Re-enable buttons
+                    }
+                } catch (error) {
+                    console.error("Delete failed", error);
+                    statusEl.textContent = "An error occurred while deleting.";
+                    statusEl.className = 'modal-status-message error';
+                    statusEl.style.display = 'block';
+                    done();
+                }
+            });
+        }
+
+        function searchFiles() {
+            const searchQuery = document.getElementById('searchInput').value;
+            loadStaticFiles(1, searchQuery);
+        }
+
+        function triggerUpload() {
+            document.getElementById('fileInput').click();
+        }
+
+        // Handle file upload
+        async function uploadFile() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                alert('Please select a file to upload');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            const token = localStorage.getItem('token');
+            console.log(token)
+
+            try {
+                const response = await fetch('/api/upload', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        Authorization: `Token ${token}`,
+
+                    }
+                });
+
+                const result = await response.json();
+
+                if (result.status === "success") {
+                    alert('File uploaded successfully');
+                    loadStaticFiles(1);
+                } else {
+                    alert('File upload failed');
+                }
+            } catch (error) {
+                console.error('Error uploading file:', error);
+            }
+        }
+
+        function viewFile(fileName) {
+            const fileUrl = `/${fileName}`;
+            const section = document.getElementById('dynamic-section');
+
+            // Remove any existing modal before creating a new one
+            const existingModal = document.getElementById('fileModal');
+            if (existingModal) {
+                existingModal.remove();
+            }
+
+            // Create the modal dynamically
+            const modal = document.createElement('div');
+            modal.id = "fileModal";
+            modal.className = "staticmodal";
+            modal.innerHTML = `
+            <span class="staticclose" onclick="closeStaticModal()">&times;</span>
+        <div class="staticmodal-content">
+            
+            <div id="filePreview"></div>
+        </div>
+    `;
+
+            section.appendChild(modal); // Append modal to dynamic section
+
+            // Set up the preview content
+            const filePreview = document.getElementById("filePreview");
+            filePreview.innerHTML = '';
+
+            if (fileName.endsWith('.jpg') || fileName.endsWith('.png') || fileName.endsWith('.gif')) {
+                filePreview.innerHTML = `<img src="${fileUrl}" style="max-width: 100%; height: auto;">`;
+            } else if (fileName.endsWith('.pdf')) {
+                filePreview.innerHTML = `<iframe src="${fileUrl}" width="100%" height="100%"></iframe>`;
+            } else {
+                filePreview.innerHTML = `<p>Preview not available. <a href="${fileUrl}" target="_blank">Download File</a></p>`;
+            }
+
+            modal.style.display = "flex";
+        }
+
+        function closeStaticModal() {
+            const modal = document.getElementById("fileModal");
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+
+        let allRoles = [];
+
+        async function loadPlatFormRoles() {
+            const section = document.getElementById('dynamic-section');
+            section.innerHTML = '<p class="loading-message">Loading Roles...</p>';
+
+            const token = localStorage.getItem("token")
+            try {
+                const response = await fetch(`/api/admin/platform/roles`, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Token ${token}`
+                    }
+                });
+                const data = await response.json();
+
+                if (!data.data || data.data.length === 0) {
+                    section.innerHTML = `
+            <div class="permissions-section">
+                <div class="header">
+                    <h2 class="section-title">Platform Roles</h2>
+                    <button class="btn-primary" onclick="createPlatFormRole()">+ Create Role</button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search roles by name" oninput="filterRoles()" />
+                </div>
+                <p class="no-roles-message">No roles found.</p>
+            </div>`;
+                    return;
+                }
+
+                // Store roles for filtering
+                allRoles = data.data;
+
+                section.innerHTML = renderRoles(data.data); // Render the roles list
+            } catch (error) {
+                section.innerHTML = '<p class="error-message">Error loading roles. Please try again later.</p>';
+                console.error(error);
+            }
+        }
+
+        function renderRoles(roles) {
+            return `
+    <div class="permissions-section">
+        <div class="header">
+            <h2 class="section-title">Platform Roles</h2>
+            <button class="btn-primary" onclick="createPlatFormRole()">+ Create Role</button>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" 
+                   placeholder="Search roles by name" 
+                   oninput="filterRoles()" />
+            <select id="roleCategory" onchange="filterRoles()">
+                <option value="">All Roles</option>
+                <option value="Developer">Developer</option>
+                <option value="Tester">Tester</option>
+                <option value="super-admin">super-admin</option>
+                
+            </select>
+        </div>
+        <ul class="roles-list" id="rolesList">
+            ${roles.map(role => `
+                <li class="role-item">
+                    <p class="role-name">${role.identity}</p>
+                    <div class="actions">
+                        <button class="btn-secondary" onclick="updatePlatFormRole('${role.uuid}')">Update</button>
+                        <button class="btn-danger" onclick="deletePlatFormRole('${role.uuid}')">Delete</button>
+                    </div>
+                </li>
+            `).join('')}
+        </ul>
+    </div>`;
+        }
+
+
+
+        function filterRoles() {
+            const searchInput = document.getElementById('searchInput');
+            const roleCategory = document.getElementById('roleCategory');
+
+            if (!searchInput || !roleCategory) {
+                console.error('Search input or role category dropdown not found');
+                return;
+            }
+
+            const query = searchInput.value.trim().toLowerCase();
+            const category = roleCategory.value;
+
+            // Filter roles based on search query and category
+            const filteredRoles = allRoles.filter(role => {
+                const matchesSearch = role.identity && role.identity.toLowerCase().includes(query);
+                const matchesCategory = category ? role.identity === category : true;
+                return matchesSearch && matchesCategory;
+            });
+
+            const rolesList = document.getElementById('rolesList');
+            if (!rolesList) {
+                console.error('Roles list container not found');
+                return;
+            }
+
+            // Update only the roles list dynamically
+            rolesList.innerHTML = filteredRoles.map(role => `
+        <li class="role-item">
+            <p class="role-name">${role.identity}</p>
+            <div class="actions">
+                <button class="btn-secondary" onclick="updatePlatFormRole('${role._id}')">Update</button>
+                <button class="btn-danger" onclick="deletePlatFormRole('${role._id}')">Delete</button>
+            </div>
+        </li>
+    `).join('');
+        }
+
+
+
+
+
+
+        // Create Platform Role
+        async function createPlatFormRole() {
+            const token = localStorage.getItem("token")
+            const newRoleName = prompt("Enter the name of the new role:");
+
+            if (newRoleName) {
+                try {
+                    const response = await fetch(`/api/admin/platform/roles`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Token ${token}`
+                        },
+                        body: JSON.stringify({ identity: newRoleName }),
+                    });
+
+                    console.log("Plat Role ", response)
+
+                    if (response.ok) {
+                        alert("Role created successfully!");
+                        loadPlatFormRoles(); // Reload roles
+                    } else {
+                        alert("Error creating role.");
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert("Error creating role.");
+                }
+            }
+        }
+
+
+        // Update Platform Role
+        async function updatePlatFormRole(roleId) {
+            const token = localStorage.getItem("token")
+            const updatedRoleName = prompt("Enter the new name for the role:");
+            console.log(`Role ID: ${roleId}`);
+            console.log(`Updated Role Name: ${updatedRoleName}`);
+
+            if (updatedRoleName) {
+                try {
+                    const response = await fetch(`/api/admin/platform/roles/${roleId}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Token ${token}`
+                        },
+                        body: JSON.stringify({ identity: updatedRoleName }),
+                    });
+
+                    console.log("Response Status:", response.status);
+                    console.log("Response Status Text:", response.statusText);
+
+                    if (response.ok) {
+                        console.log("Response Body:", await response.json());
+                        alert("Role updated successfully!");
+                        loadPlatFormRoles(); // Reload roles
+                    } else {
+                        const errorDetails = await response.text();
+                        console.error("Failed Response:", errorDetails);
+                        alert("Error updating role. Details: " + errorDetails);
+                    }
+                } catch (error) {
+                    console.error("Error updating role:", error);
+                    alert("Error updating role.");
+                }
+            } else {
+                alert("Role update cancelled or empty name provided.");
+            }
+        }
+
+
+        // Delete Platform Role
+        async function deletePlatFormRole(roleId) {
+            const token = localStorage.getItem("token")
+            if (confirm("Are you sure you want to delete this role?")) {
+                try {
+                    const response = await fetch(`/api/admin/platform/roles/${roleId}`, {
+                        method: 'DELETE',
+                        headers: {
+                            "Authorization": `Token ${token}`
+                        }
+                    });
+
+                    if (response.ok) {
+                        alert("Role deleted successfully!");
+                        loadPlatFormRoles(); // Reload roles
+                    } else {
+                        alert("Error deleting role.");
+                    }
+                } catch (error) {
+                    console.error("Error deleting role:", error);
+                    alert("Error deleting role.");
+                }
+            }
+        }
+
+
+        let allInstituteRoles = []; // Store all roles for filtering
+
+        async function loadInstituteRoles() {
+            const section = document.getElementById('dynamic-section');
+            section.innerHTML = '<p class="loading-message">Loading Roles...</p>';
+            const token = localStorage.getItem("token")
+            try {
+                const response = await fetch(`/api/admin/institutes/roles`, {
+                    headers: {
+                        Authorization: `Token ${token}`
+                    }
+                });
+                const data = await response.json();
+                console.log("Data", data);
+
+                // Store all roles for filtering
+                allInstituteRoles = data.data || [];
+
+                section.innerHTML = `
+        <div class="permissions-section">
+            <div class="header">
+                <h2 class="section-title">Institute Roles</h2>
+                {{!-- <button class="btn-primary" onclick="createInstituteRole()">+ Create Role</button> --}}
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" 
+                       placeholder="Search roles by name" 
+                       oninput="filterInstituteRoles()" />
+                <select id="roleCategory" onchange="filterInstituteRoles()">
+                    <option value="">All Roles</option>
+                    <option value="Institute Admin">Institute Admin</option>
+                    <option value="Teaching Staff">Teaching Staff</option>
+                    <option value="Non Teaching Staff">Non Teaching Staff</option>
+                    <option value="Student">Student</option>
+                </select>
+            </div>
+            <ul class="roles-list" id="rolesList">
+                ${renderInstituteRoles(allInstituteRoles)}
+            </ul>
+        </div>`;
+            } catch (error) {
+                section.innerHTML = '<p>Error loading roles.</p>';
+                console.error(error);
+            }
+        }
+
+
+        // Function to render roles as list items
+        function renderInstituteRoles(roles) {
+            return roles.map(role => `
+        <li class="role-item">
+            <p class="role-name">${role.identity}</p>
+            <div class="actions">
+                {{!-- <button class="btn-secondary" onclick="updateInstituteRole('${role.uuid}')">Update</button>
+                <button class="btn-danger" onclick="deleteInstituteRole('${role.uuid}')">Delete</button> --}}
+            </div>
+        </li>
+    `).join('');
+        }
+
+        // Function to filter roles based on search input
+        function filterInstituteRoles() {
+            const searchInput = document.getElementById('searchInput').value.trim().toLowerCase();
+            const roleCategory = document.getElementById('roleCategory').value;
+
+            // Filter the roles based on search query and selected category
+            const filteredRoles = allInstituteRoles.filter(role => {
+                const matchesSearch = role.identity && role.identity.toLowerCase().includes(searchInput);
+                const matchesCategory = roleCategory ? role.identity === roleCategory : true;
+                return matchesSearch && matchesCategory;
+            });
+
+            // Update the roles list dynamically
+            const rolesList = document.getElementById('rolesList');
+            rolesList.innerHTML = renderInstituteRoles(filteredRoles);
+        }
+
+
+
+
+
+
+        // Create Institute Features
+
+        async function createInstituteRole() {
+            const token = localStorage.getItem("token");
+            const newRoleName = prompt("Enter the name of the new role:");
+            console.log("Ins", newRoleName)
+
+            if (newRoleName) {
+                try {
+                    const response = await fetch(`/api/admin/institutes/role`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            Authorization: `Token ${token}`
+                        },
+                        body: JSON.stringify({ identity: newRoleName }),
+                    });
+
+                    if (response.ok) {
+                        alert("Role created successfully!");
+                        loadInstituteRoles(); // Reload roles
+                    } else {
+                        alert("Error creating role.");
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert("Error creating role.");
+                }
+            }
+        }
+
+        //// Update Institute Role
+
+        async function updateInstituteRole(roleId) {
+            const token = localStorage.getItem('token')
+            const updatedRoleName = prompt("Enter the new name for the role:");
+            console.log(`Role ID: ${roleId}`);
+            console.log(`Updated Role Name: ${updatedRoleName}`);
+
+            if (updatedRoleName) {
+                try {
+                    const response = await fetch(`/api/admin/institutes/roles/${roleId}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Token ${token}`
+                        },
+                        body: JSON.stringify({ identity: updatedRoleName }),
+                    });
+
+                    console.log("Response Status:", response.status);
+                    console.log("Response Status Text:", response.statusText);
+
+                    if (response.ok) {
+                        console.log("Response Body:", await response.json());
+                        alert("Role updated successfully!");
+                        loadInstituteRoles(); // Reload roles
+                    } else {
+                        const errorDetails = await response.text();
+                        console.error("Failed Response:", errorDetails);
+                        alert("Error updating role. Details: " + errorDetails);
+                    }
+                } catch (error) {
+                    console.error("Error updating role:", error);
+                    alert("Error updating role.");
+                }
+            } else {
+                alert("Role update cancelled or empty name provided.");
+            }
+        }
+
+        // Delete Institute Role
+
+        async function deleteInstituteRole(roleId) {
+            const token = localStorage.getItem("token")
+            if (confirm("Are you sure you want to delete this role?")) {
+                try {
+                    const response = await fetch(`/api/admin/institutes/roles/${roleId}`, {
+                        method: 'DELETE',
+                        headers: {
+                            "Authorization": `Token ${token}`
+                        }
+                    });
+
+                    if (response.ok) {
+                        alert("Role deleted successfully!");
+                        loadInstituteRoles(); // Reload roles
+                    } else {
+                        alert("Error deleting role.");
+                    }
+                } catch (error) {
+                    console.error("Error deleting role:", error);
+                    alert("Error deleting role.");
+                }
+            }
+        }
+
+
+
+        // Load Features Section
+        let allPlatFormFeatures = []; // Store all platform features for filtering
+
+        async function loadPlatFormFeatures() {
+            const section = document.getElementById('dynamic-section');
+            section.innerHTML = '<p>Loading Features...</p>';
+            const token = localStorage.getItem("token")
+            try {
+                const response = await fetch(`/api/admin/platform/features`, {
+                    headers: {
+                        Authorization: `Token ${token}`
+                    }
+                });
+                const data = await response.json();
+
+                // Store all features for filtering
+                allPlatFormFeatures = data.data || [];
+
+                section.innerHTML = `
+        <div class="permissions-section">
+            <div class="header">
+                <h2 class="section-title">Platform Features</h2>
+                <button class="btn-primary" onclick="createPlatFormFeatures()">+ Create Features</button>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchPlatFormFeatures" 
+                       placeholder="Search features by name" 
+                       oninput="filterPlatFormFeatures()" />
+            </div>
+            <ul class="roles-list" id="platFormFeaturesList">
+                ${renderPlatFormFeatures(allPlatFormFeatures)}
+            </ul>
+        </div>`;
+            } catch (error) {
+                section.innerHTML = '<p>Error loading features.</p>';
+                console.error(error);
+            }
+        }
+
+        // Function to render platform features dynamically
+        function renderPlatFormFeatures(features) {
+            return features.map(feature => `
+        <li class="role-item">
+            <p class="role-name">${feature.identity}</p>
+            <div class="actions">
+                <button class="btn-secondary" onclick="updatePlatFormFeatures('${feature._id}')">Update</button>
+                <button class="btn-danger" onclick="deletePlatFormFeatures('${feature._id}')">Delete</button>
+            </div>
+        </li>
+    `).join('');
+        }
+
+        // Function to filter platform features
+        function filterPlatFormFeatures() {
+            const searchInput = document.getElementById('searchPlatFormFeatures');
+            const query = searchInput.value.trim().toLowerCase();
+
+            // Filter features
+            const filteredFeatures = allPlatFormFeatures.filter(feature =>
+                feature.identity && feature.identity.toLowerCase().includes(query)
+            );
+
+            // Update the features list dynamically
+            const featuresList = document.getElementById('platFormFeaturesList');
+            featuresList.innerHTML = renderPlatFormFeatures(filteredFeatures);
+        }
+
+        // Create PlatForm Features
+
+        async function createPlatFormFeatures() {
+            const token = localStorage.getItem("token");
+            const newRoleName = prompt("Enter the name of the new role:");
+
+            if (newRoleName) {
+                try {
+                    const response = await fetch(`/api/admin/platform/features`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Token ${token}`
+                        },
+                        body: JSON.stringify({ identity: newRoleName }),
+                    });
+
+                    if (response.ok) {
+                        alert("Feature created successfully!");
+                        loadPlatFormFeatures(); // Reload roles
+                    } else {
+                        alert("Error creating role.");
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert("Error creating role.");
+                }
+            }
+        }
+
+        async function updatePlatFormFeatures(featureId) {
+            const token = localStorage.getItem("token")
+            const updatedRoleName = prompt("Enter the new name for the Feature:");
+
+            console.log(`Updated Role Name: ${updatedRoleName}`);
+
+            if (updatedRoleName) {
+                try {
+                    const response = await fetch(`/api/admin/platform/features/${featureId}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Token ${token}`
+                        },
+                        body: JSON.stringify({ identity: updatedRoleName }),
+                    });
+
+                    console.log("Response Status:", response.status);
+                    console.log("Response Status Text:", response.statusText);
+
+                    if (response.ok) {
+                        console.log("Response Body:", await response.json());
+                        alert("Role updated successfully!");
+                        loadPlatFormFeatures(); // Reload roles
+                    } else {
+                        const errorDetails = await response.text();
+                        console.error("Failed Response:", errorDetails);
+                        alert("Error updating features. Details: " + errorDetails);
+                    }
+                } catch (error) {
+                    console.error("Error updating Features:", error);
+                    alert("Error updating features.");
+                }
+            } else {
+                alert("Role update cancelled or empty name provided.");
+            }
+        };
+
+        // Delete Platform Features
+
+        async function deletePlatFormFeatures(featureId) {
+            const token = localStorage.getItem("token");
+            if (confirm("Are you sure you want to delete this role?")) {
+                try {
+                    const response = await fetch(`/api/admin/platform/features/${featureId}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Token ${token}`
+                        }
+                    });
+
+                    if (response.ok) {
+                        alert("Role deleted successfully!");
+                        loadPlatFormFeatures(); // Reload roles
+                    } else {
+                        alert("Error deleting role.");
+                    }
+                } catch (error) {
+                    console.error("Error deleting role:", error);
+                    alert("Error deleting role.");
+                }
+            }
+        }
+
+
+
+        let allInstituteFeatures = []; // Store all institute features for filtering
+
+        async function loadInstituteFeatures() {
+            const section = document.getElementById('dynamic-section');
+            section.innerHTML = '<p>Loading Features...</p>';
+            const token = localStorage.getItem("token");
+            try {
+                const response = await fetch(`/api/admin/institutes/features`, {
+                    headers: {
+                        Authorization: `Token ${token}`
+                    }
+                });
+                const data = await response.json();
+
+                // Store all features for filtering
+                allInstituteFeatures = data.data || [];
+
+                section.innerHTML = `
+        <div class="permissions-section">
+            <div class="header">
+                <h2 class="section-title">Institute Features</h2>
+                <button class="btn-primary" onclick="createInstituteFeatures()">+ Create Features</button>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInstituteFeatures" 
+                       placeholder="Search features by name" 
+                       oninput="filterInstituteFeatures()" />
+            </div>
+            <ul class="roles-list" id="instituteFeaturesList">
+                ${renderInstituteFeatures(allInstituteFeatures)}
+            </ul>
+        </div>`;
+            } catch (error) {
+                section.innerHTML = '<p>Error loading features.</p>';
+                console.error(error);
+            }
+        }
+
+        // Function to render institute features dynamically
+        function renderInstituteFeatures(features) {
+            return features.map(feature => `
+        <li class="role-item">
+            <p class="role-name">${feature.identity}</p>
+            <div class="actions">
+                <button class="btn-secondary" onclick="updateInstituteFeatures('${feature._id}')">Update</button>
+                <button class="btn-danger" onclick="deleteInstituteFeatures('${feature._id}')">Delete</button>
+            </div>
+        </li>
+    `).join('');
+        }
+
+        // Function to filter institute features
+        function filterInstituteFeatures() {
+            const searchInput = document.getElementById('searchInstituteFeatures');
+            const query = searchInput.value.trim().toLowerCase();
+
+            // Filter features
+            const filteredFeatures = allInstituteFeatures.filter(feature =>
+                feature.identity && feature.identity.toLowerCase().includes(query)
+            );
+
+            // Update the features list dynamically
+            const featuresList = document.getElementById('instituteFeaturesList');
+            featuresList.innerHTML = renderInstituteFeatures(filteredFeatures);
+        }
+
+        async function createInstituteFeatures() {
+            const token = localStorage.getItem("token");
+            const newRoleName = prompt("Enter the name of the new role:");
+
+            if (newRoleName) {
+                try {
+                    const response = await fetch(`/api/admin/institutes/feature`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Token ${token}`
+                        },
+                        body: JSON.stringify({ identity: newRoleName }),
+                    });
+
+                    if (response.ok) {
+                        alert("Feature created successfully!");
+                        loadInstituteFeatures(); // Reload roles
+                    } else {
+                        alert("Error creating role.");
+                    }
+                } catch (error) {
+                    console.error(error);
+                    alert("Error creating role.");
+                }
+            }
+        }
+
+        // Update Institute Features
+
+        async function updateInstituteFeatures(featureId) {
+            const token = localStorage.getItem("token")
+            const updatedRoleName = prompt("Enter the new name for the Feature:");
+
+            console.log(`Updated Role Name: ${updatedRoleName}`);
+
+            if (updatedRoleName) {
+                try {
+                    const response = await fetch(`/api/admin/institutes/features/${featureId}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Token ${token}`
+                        },
+                        body: JSON.stringify({ identity: updatedRoleName }),
+                    });
+
+                    console.log("Response Status:", response.status);
+                    console.log("Response Status Text:", response.statusText);
+
+                    if (response.ok) {
+                        console.log("Response Body:", await response.json());
+                        alert("Role updated successfully!");
+                        loadInstituteFeatures(); // Reload roles
+                    } else {
+                        const errorDetails = await response.text();
+                        console.error("Failed Response:", errorDetails);
+                        alert("Error updating features. Details: " + errorDetails);
+                    }
+                } catch (error) {
+                    console.error("Error updating Features:", error);
+                    alert("Error updating features.");
+                }
+            } else {
+                alert("Role update cancelled or empty name provided.");
+            }
+        }
+
+        async function deleteInstituteFeatures(featureId) {
+            const token = localStorage.getItem("token")
+            if (confirm("Are you sure you want to delete this role?")) {
+                try {
+                    const response = await fetch(`/api/admin/institutes/features/${featureId}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Authorization': `Token ${token}`
+                        }
+                    });
+
+                    if (response.ok) {
+                        alert("Role deleted successfully!");
+                        loadInstituteFeatures(); // Reload roles
+                    } else {
+                        alert("Error deleting role.");
+                    }
+                } catch (error) {
+                    console.error("Error deleting role:", error);
+                    alert("Error deleting role.");
+                }
+            }
+        }
+
+
+
+
+
+        async function loadInstitutePermissions() {
+            const section = document.getElementById('dynamic-section');
+            section.innerHTML = '<p class="loading">Loading Permissions...</p>';
+            const token = localStorage.getItem("token");
+
+            try {
+                const response = await fetch(`/api/admin/institutes/permissions`, {
+                    headers: {
+                        Authorization: `Token ${token}`
+                    }
+                });
+                const data = await response.json();
+
+                section.innerHTML = `
+        <div class="permissions-section">
+            <div class="header">
+                <h2 class="section-title">Institutes Permissions</h2>
+                
+            </div>
+            <ul class="roles-list">
+                ${data.data.map(role => `
+                    <li class="role-item" onclick="viewInstitutePermissionDetails(
+                        '${role.uuid}', 
+                        '${role.role}',
+                        '${role.identity}', 
+                        ${role.is_active}, 
+                        ${role.is_delete}, 
+                        ${role.create_permission?.permission}, 
+                        ${role.read_permission?.permission}, 
+                        ${role.update_permission?.permission}, 
+                        ${role.delete_permission?.permission}
+                    )">
+                        <p class="role-name">${role.identity}</p>
+                    </li>
+                `).join('')}
+            </ul>
+        </div>`;
+            } catch (error) {
+                section.innerHTML = '<p class="error">Error loading permissions.</p>';
+                console.error(error);
+            }
+        }
+
+        async function viewInstitutePermissionDetails(permissionId, roleId, identity, isActive, isDelete, createPermission, readPermission, updatePermission, deletePermission) {
+            const section = document.getElementById('dynamic-section');
+
+            section.innerHTML = `
+    <div class="permission-details modern-card">
+        <div class="header">
+            <button class="btn-secondary" onclick="loadPlatFormPermissions()">← </button>
+            <h2>Permission Details</h2>
+        </div>
+        <div class="identity-info">
+            <p><strong>Identity:</strong> ${identity}</p>
+            <p><strong>Role:</strong> ${roleId}</p>
+        </div>
+        <div class="permissions-grid">
+            <label class="checkbox-label"><input type="checkbox" id="isActive" ${isActive ? 'checked' : ''}> Is Active</label>
+            <label class="checkbox-label"><input type="checkbox" id="isDelete" ${isDelete ? 'checked' : ''}> Is Delete</label>
+            <label class="checkbox-label"><input type="checkbox" id="createPermission" ${createPermission ? 'checked' : ''}> Create Permission</label>
+            <label class="checkbox-label"><input type="checkbox" id="readPermission" ${readPermission ? 'checked' : ''}> Read Permission</label>
+            <label class="checkbox-label"><input type="checkbox" id="updatePermission" ${updatePermission ? 'checked' : ''}> Update Permission</label>
+            <label class="checkbox-label"><input type="checkbox" id="deletePermission" ${deletePermission ? 'checked' : ''}> Delete Permission</label>
+        </div>
+        <button class="btn-primary full-width" id="updatePermissionBtn" disabled onclick="updatePermission('${permissionId}')">Update</button>
+    </div>`;
+
+            // Store the initial state for comparison
+            const initialState = {
+                isActive,
+                isDelete,
+                createPermission,
+                readPermission,
+                updatePermission,
+                deletePermission,
+            };
+
+            // Track changes and enable/disable the button
+            const checkboxes = section.querySelectorAll('input[type="checkbox"]');
+            const updateButton = section.querySelector('#updatePermissionBtn');
+
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener('change', () => {
+                    const hasChanged = Array.from(checkboxes).some((box) => {
+                        const key = box.id;
+                        return initialState[key] !== box.checked;
+                    });
+
+                    updateButton.disabled = !hasChanged;
+
+                    // Optional: Add styling for disabled/enabled states
+                    updateButton.classList.toggle('active', hasChanged);
+                });
+            });
+        }
+
+
+        async function updateInstitutePermission(permissionId) {
+            const token = localStorage.getItem("token");
+            const updatedData = {
+                is_active: document.getElementById("isActive").checked,
+                is_delete: document.getElementById("isDelete").checked,
+                create_permission: { permission: document.getElementById("createPermission").checked },
+                read_permission: { permission: document.getElementById("readPermission").checked },
+                update_permission: { permission: document.getElementById("updatePermission").checked },
+                delete_permission: { permission: document.getElementById("deletePermission").checked },
+            };
+
+            try {
+                const response = await fetch(`/api/admin/institutes/permissions/${permissionId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Token ${token}`
+                    },
+                    body: JSON.stringify({ permissions: updatedData })
+                });
+
+                if (response.ok) {
+                    alert("Permissions updated successfully!");
+                    loadInstitutePermissions();
+                } else {
+                    alert("Error updating permissions.");
+                }
+            } catch (error) {
+                console.error("Error updating permissions:", error);
+                alert("Error updating permissions.");
+            }
+        };
+
+
+        //// PlatForm Permissions
+        async function loadPlatFormPermissions() {
+            const section = document.getElementById('dynamic-section');
+            section.innerHTML = '<p class="loading">Loading Permissions...</p>';
+            const token = localStorage.getItem("token");
+
+            try {
+                const response = await fetch(`/api/admin/platform/permissions`, {
+                    headers: {
+                        Authorization: `Token ${token}`
+                    }
+                });
+                const data = await response.json();
+
+                section.innerHTML = `
+        <div class="permissions-section">
+            <div class="header">
+                <h2 class="section-title">Platform Permissions</h2>
+                
+            </div>
+            <ul class="roles-list">
+                ${data.data.map(role => `
+                    <li class="role-item" onclick="viewPermissionDetails(
+                        '${role.uuid}', 
+                        '${role.id}',
+                        '${role.identity}', 
+                        ${role.is_active}, 
+                        ${role.is_delete}, 
+                        ${role.create_permission?.permission}, 
+                        ${role.read_permission?.permission}, 
+                        ${role.update_permission?.permission}, 
+                        ${role.delete_permission?.permission}
+                    )">
+                        <p class="role-name">${role.identity}</p>
+                    </li>
+                `).join('')}
+            </ul>
+        </div>`;
+            } catch (error) {
+                section.innerHTML = '<p class="error">Error loading permissions.</p>';
+                console.error(error);
+            }
+        }
+
+        async function viewPermissionDetails(permissionId, roleId, identity, isActive, isDelete, createPermission, readPermission, updatePermission, deletePermission) {
+            const section = document.getElementById('dynamic-section');
+
+            section.innerHTML = `
+    <div class="permission-details modern-card">
+        <div class="header">
+            <button class="btn-secondary" onclick="loadPlatFormPermissions()">← </button>
+            <h2>Permission Details</h2>
+        </div>
+        <div class="identity-info">
+            <p><strong>Identity:</strong> ${identity}</p>
+            <p><strong>Role:</strong> ${roleId}</p>
+        </div>
+        <div class="permissions-grid">
+            <label class="checkbox-label"><input type="checkbox" id="isActive" ${isActive ? 'checked' : ''}> Is Active</label>
+            <label class="checkbox-label"><input type="checkbox" id="isDelete" ${isDelete ? 'checked' : ''}> Is Delete</label>
+            <label class="checkbox-label"><input type="checkbox" id="createPermission" ${createPermission ? 'checked' : ''}> Create Permission</label>
+            <label class="checkbox-label"><input type="checkbox" id="readPermission" ${readPermission ? 'checked' : ''}> Read Permission</label>
+            <label class="checkbox-label"><input type="checkbox" id="updatePermission" ${updatePermission ? 'checked' : ''}> Update Permission</label>
+            <label class="checkbox-label"><input type="checkbox" id="deletePermission" ${deletePermission ? 'checked' : ''}> Delete Permission</label>
+        </div>
+        <button class="btn-primary full-width" id="updatePermissionBtn" disabled onclick="updatePermission('${permissionId}')">Update</button>
+    </div>`;
+
+            // Store the initial state for comparison
+            const initialState = {
+                isActive,
+                isDelete,
+                createPermission,
+                readPermission,
+                updatePermission,
+                deletePermission,
+            };
+
+            // Track changes and enable/disable the button
+            const checkboxes = section.querySelectorAll('input[type="checkbox"]');
+            const updateButton = section.querySelector('#updatePermissionBtn');
+
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener('change', () => {
+                    const hasChanged = Array.from(checkboxes).some((box) => {
+                        const key = box.id;
+                        return initialState[key] !== box.checked;
+                    });
+
+                    updateButton.disabled = !hasChanged;
+
+                    // Optional: Add styling for disabled/enabled states
+                    updateButton.classList.toggle('active', hasChanged);
+                });
+            });
+        }
+
+
+        async function updatePermission(permissionId) {
+            const token = localStorage.getItem("token");
+            const updatedData = {
+                is_active: document.getElementById("isActive").checked,
+                is_delete: document.getElementById("isDelete").checked,
+                create_permission: { permission: document.getElementById("createPermission").checked },
+                read_permission: { permission: document.getElementById("readPermission").checked },
+                update_permission: { permission: document.getElementById("updatePermission").checked },
+                delete_permission: { permission: document.getElementById("deletePermission").checked },
+            };
+
+            try {
+                const response = await fetch(`/api/admin/platform/permissions/${permissionId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Token ${token}`
+                    },
+                    body: JSON.stringify({ permissions: updatedData })
+                });
+
+                if (response.ok) {
+                    alert("Permissions updated successfully!");
+                    loadPlatFormPermissions();
+                } else {
+                    alert("Error updating permissions.");
+                }
+            } catch (error) {
+                console.error("Error updating permissions:", error);
+                alert("Error updating permissions.");
+            }
+        };
+
+
+
+
+
+
+        ///// ActivityLogs /////
+
+
+
+        let allLogs = [];
+
+        // Fetch logs based on role, page, and limit
+        const fetchActivityLogs = async (role, page = 1, limit = 20) => {
+            console.log(`Fetching logs for role: ${role}`);
+            const token = localStorage.getItem("token");
+            console.log(token)
+            try {
+
+                const response = await fetch(`/api/developer/user-activity-logs?role=${role}&page=${page}&limit=${limit}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                const data = await response.json();
+
+                if (data.status === "success" && data.data.length > 0) {
+                    allLogs = data.data; // Store logs for filtering
+                    renderLogs(allLogs, data.pagination, role); // Render all logs initially
+                } else {
+                    renderEmptyLogs(role);
+                }
+            } catch (error) {
+                console.error("Error fetching logs:", error);
+                document.getElementById("dynamic-section").innerHTML = `
+            <p class="error-message">Error fetching logs. Please try again later.</p>`;
+            }
+        };
+
+        // Render logs (all data or filtered based on search)
+        const renderLogs = (logs, pagination, role) => {
+            const dynamicSection = document.getElementById("dynamic-section");
+
+            dynamicSection.innerHTML = `
+        <h2 class="logs-title">${role} Activity Logs</h2>
+        <div class="search-filters">
+            <input type="text" id="searchName" placeholder="Search by name" 
+                oninput="filterLogs('${role}', ${pagination.currentPage}, ${pagination.limit})" />
+            <input type="date" id="searchDate" 
+                onchange="filterLogs('${role}', ${pagination.currentPage}, ${pagination.limit})" />
+        </div>
+        <ul id="logs-list" class="logs-list"></ul>
+        ${pagination ? `
+            <div class="pagination">
+                <button id="prevPage" class="btn-pagination" ${pagination.isFirstPage ? "disabled" : ""}>
+                    ⟵ Previous
+                </button>
+                <span class="pagination-info">Page ${pagination.currentPage} of ${pagination.totalPages}</span>
+                <button id="nextPage" class="btn-pagination" ${pagination.isLastPage ? "disabled" : ""}>
+                    Next ⟶
+                </button>
+            </div>
+        ` : ""}
+    `;
+
+            updateLogsList(logs);
+
+            // Pagination event listeners
+            document.getElementById("prevPage")?.addEventListener("click", () =>
+                fetchActivityLogs(role, pagination.currentPage - 1));
+            document.getElementById("nextPage")?.addEventListener("click", () =>
+                fetchActivityLogs(role, pagination.currentPage + 1));
+        };
+
+        // Update logs list after filtering
+        const updateLogsList = (logs) => {
+            const logsList = document.getElementById("logs-list");
+            if (logs.length === 0) {
+                logsList.innerHTML = `<p class="empty-message">No matching logs found.</p>`;
+            } else {
+                logsList.innerHTML = logs.map(log => {
+                    const userName = log.user?.full_name || log.name;
+                    console.log("logs", log)
+                    const logTitle = log.title || "N/A";
+                    const logTimestamp = log.timestamp || "N/A";
+
+
+                    return `
+                <li class="log-item">
+                    <div class="log-user">
+                        <span class="user-name">${log.action}</span>
+                    </div>
+                    <div class="log-timestamp"></div>
+                    <button class="btn-view" onclick="showLogDetails('${userName}', '${logTitle}', '${logTimestamp}',)">View</button>
+                </li>
+            `;
+                }).join('');
+            }
+        };
+
+
+        // Show modal with log details
+        const showLogDetails = (userName, userTitle, timestamp, email) => {
+            const modal = document.getElementById("logDetailsModal");
+            modal.querySelector(".modal-username").textContent = userName;
+            modal.querySelector(".modal-title").textContent = userTitle;
+            modal.querySelector(".modal-timestamp").textContent = timestamp;
+            modal.style.display = "block";
+            document.body.classList.add("modal-open"); // Prevent background scrolling
+        };
+
+        // Hide modal
+        const closeModal = () => {
+            const modal = document.getElementById("logDetailsModal");
+            modal.style.display = "none";
+            document.body.classList.remove("modal-open");
+        };
+
+        // Add modal structure to the page
+        const initModal = () => {
+            const modalHTML = `
+        <div id="logDetailsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2>User Log Details</h2>
+                <p><strong>User Name:</strong> <span class="modal-username"></span></p>
+                <p><strong>User Title:</strong> <span class="modal-title"></span></p>
+                <p><strong>Timestamp:</strong> <span class="modal-timestamp"></span></p>
+            </div>
+        </div>`;
+            document.body.insertAdjacentHTML("beforeend", modalHTML);
+        };
+
+        // Filter logs based on name and date
+        const filterLogs = (role, page = 1, limit = 20) => {
+            const nameQuery = document.getElementById("searchName")?.value.trim().toLowerCase();
+            const dateQuery = document.getElementById("searchDate")?.value;
+
+            // Filter logs based on search criteria
+            const filteredLogs = allLogs.filter(log => {
+                const matchesName = nameQuery ? log.action.toLowerCase().includes(nameQuery) : true;
+                const matchesDate = dateQuery ? log.timestamp.startsWith(dateQuery) : true;
+                return matchesName && matchesDate;
+            });
+
+            // Render filtered logs
+            updateLogsList(filteredLogs);
+
+            // Adjust pagination for filtered data
+            renderPagination(filteredLogs, role, page, limit);
+        };
+
+        // Handle pagination for filtered data
+        const renderPagination = (filteredLogs, role, page, limit) => {
+            const paginationContainer = document.querySelector(".pagination");
+            if (!paginationContainer) return;
+
+            const totalPages = Math.ceil(filteredLogs.length / limit);
+            paginationContainer.innerHTML = `
+        <button id="prevPage" class="btn-pagination" ${page === 1 ? "disabled" : ""}>
+            ⟵ Previous
+        </button>
+        <span class="pagination-info">Page ${page} of ${totalPages}</span>
+        <button id="nextPage" class="btn-pagination" ${page >= totalPages ? "disabled" : ""}>
+            Next ⟶
+        </button>
+    `;
+
+            // Attach pagination handlers for previous and next pages
+            document.getElementById("prevPage")?.addEventListener("click", () =>
+                fetchActivityLogs(role, page - 1, limit));
+            document.getElementById("nextPage")?.addEventListener("click", () =>
+                fetchActivityLogs(role, page + 1, limit));
+        };
+
+        // Handle empty logs state when no data is found
+        const renderEmptyLogs = (role) => {
+            document.getElementById("dynamic-section").innerHTML = `
+        <h3 class="logs-title">${role} Activity Logs</h3>
+        <p class="empty-message">No logs found for <span class="highlight">${role}</span>.</p>`;
+        };
+
+        // Initialize modal on page load
+        document.addEventListener("DOMContentLoaded", () => {
+            initModal();
+
+            // Sidebar event listeners for different roles
+            document.getElementById("instituteAdminLink")?.addEventListener("click", () =>
+                fetchActivityLogs("Institute Admin"));
+            document.getElementById("teachingStaffLink")?.addEventListener("click", () =>
+                fetchActivityLogs("Teaching Staff"));
+            document.getElementById("studentLink")?.addEventListener("click", () =>
+                fetchActivityLogs("Student"));
+            document.getElementById("developerLink")?.addEventListener("click", () =>
+                fetchActivityLogs("Developer"));
+        });
+
+
+
+
+        // Add modal styles
+        const modalStyles = document.createElement("style");
+        modalStyles.innerHTML = `
+    body.modal-open { overflow: hidden; } /* Prevent background scrolling */
+    .modal {
+        display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+        width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4);
+    }
+    .modal-content {
+        background-color: #fefefe; margin: 15% auto; padding: 20px;
+        border: 1px solid #888; width: 50%; border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    .close-btn {
+        color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;
+    }
+    .close-btn:hover, .close-btn:focus { color: black; text-decoration: none; cursor: pointer; }
+`;
+        document.head.appendChild(modalStyles);
+
+
+
+
+
+        // Reference to the dynamic section
+        const dynamicContent = document.getElementById("dynamic-section");
+        let cachedUser = null; // Cache for user data
+
+        // Utility to render templates
+        const renderTemplate = (html) => {
+            dynamicContent.innerHTML = html;
+        };
+
+
+        const fetchUserProfile = async () => {
+            if (cachedUser) {
+                renderProfileView(cachedUser);
+                return;
+            }
+
+            try {
+                const token = localStorage.getItem("token");
+                if (!token) throw new Error("You are not logged in. Please log in to continue.");
+
+                const response = await fetch("/api/developer/profile", {
+                    headers: { Authorization: `Token ${token}` },
+                });
+
+                if (!response.ok) throw new Error("Failed to load profile.");
+
+                const data = await response.json();
+                cachedUser = data.data;
+                renderProfileView(cachedUser);
+            } catch (error) {
+                renderTemplate(`<div class="error-message">${error.message}</div>`);
+            }
+        };
+
+        // Render Profile View
+        const renderProfileView = (user) => {
+            renderTemplate(`
+    <div class="container">
+      <img src="/images/developer_profile.png" alt="User Avatar" loading="lazy" class="avatar">
+      <h1>Welcome, <span>${user.first_name}</span></h1>
+      <div class="profile-info">
+        <p><strong>Email:</strong> ${user.email}</p>
+      </div>
+      <div class="button-group">
+        <button type="button" id="editProfileBtn">Edit Profile</button>
+        <button type="button" id="logoutBtn">Logout</button>
+      </div>
+      <div class="error-message" id="errorMessage"></div>
+    </div>
+  `);
+        };
+
+        // Render Edit Profile Form
+        const renderEditForm = (user) => {
+            renderTemplate(`
+    <div class="container">
+      <h2>Edit Profile</h2>
+      <form id="editProfileForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" value="${user.first_name}" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" value="${user.email}" required>
+        <div class="button-group">
+          <button type="submit">Save Changes</button>
+          <button type="button" id="cancelEditBtn">Cancel</button>
+        </div>
+      </form>
+      <div class="error-message" id="errorMessage"></div>
+    </div>
+  `);
+        };
+
+        const handleProfileUpdate = async (e) => {
+            e.preventDefault();
+            document.getElementById("errorMessage").textContent = "";
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            try {
+                const token = localStorage.getItem("token");
+                const response = await fetch("/api/developer/update-profile", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Token ${token}`,
+                    },
+                    body: JSON.stringify({ name, email }),
+                });
+
+                if (!response.ok) throw new Error("Failed to update profile.");
+
+                cachedUser = { ...cachedUser, name, email };
+                alert("Profile updated successfully!");
+                renderProfileView(cachedUser);
+            } catch (error) {
+                document.getElementById("errorMessage").textContent = error.message;
+            }
+        };
+
+        //Logout
+        const handleLogout = async () => {
+            const storedEmail = localStorage.getItem("email")
+            try {
+                const response = await fetch("/api/developer/logout", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ email: storedEmail })
+                });
+                if (!response.ok) throw new Error("Logout failed.");
+
+                localStorage.clear();
+                window.history.replaceState(null, null, "/api/developer/login");
+                window.location.replace("/api/developer/login");
+            } catch (error) {
+                alert(error.message);
+            }
+        };
+
+
+        {{!--dynamicContent.addEventListener("click", (e) => {
+                    if (e.target.id === "editProfileBtn") {
+                        renderEditForm(cachedUser);
+                    } else if (e.target.id === "logoutBtn") {
+                        handleLogout();
+                    } else if (e.target.id === "cancelEditBtn") {
+                        renderProfileView(cachedUser);
+                    }
+                }); --}}
+
+
+        {{!--dynamicContent.addEventListener("submit", (e) => {
+                    if (e.target.id === "editProfileForm") {
+                        handleProfileUpdate(e);
+                    }
+                }); --}}
+
+
+        {{!--document.getElementById("profileLink").addEventListener("click", fetchUserProfile); --}}
+        document.getElementById("logoutLink").addEventListener("click", handleLogout);
+
+
+        const loadDeveloperPanel = async () => {
+            const token = localStorage.getItem('token');
+            console.log("Token found in local storage:", token);
+            if (!token) {
+                console.log("No token found in local storage");
+                window.location.href = '/api/developer/login';
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/developer', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Token ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+
+                });
+                console.log("response", response)
+
+                if (response.status === 401) {
+                    console.log("Unauthorized access. Redirecting...");
+                    window.location.href = '/api/developer/login';
+                } else {
+                    const html = await response.text();
+
+                }
+            } catch (error) {
+                console.error("Error loading developer panel:", error);
+                res.redirect('/api/developer')
+            }
+        }
+
+        loadDeveloperPanel();
+
+
+        // Session Handling
+
+        let inactivityTimeout;
+        const logoutTime = 15 * 60 * 1000;
+
+        function resetTimer() {
+            clearTimeout(inactivityTimeout);
+            inactivityTimeout = setTimeout(showSessionExpiredModal, logoutTime);
+        }
+
+        function showSessionExpiredModal() {
+            if (document.getElementById("sessionExpiredModal")) return;
+            const style = document.createElement("style");
+            style.textContent = `
+        #sessionExpiredModal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #sessionExpiredModal .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        #sessionExpiredModal h2 {
+            margin-bottom: 1rem;
+        }
+
+        #sessionExpiredModal button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    `;
+            document.head.appendChild(style);
+            const modal = document.createElement("div");
+            modal.id = "sessionExpiredModal";
+            modal.innerHTML = `
+        <div class="modal-content">
+            <h2>Session Expired</h2>
+            <p>You have been logged out due to inactivity.</p>
+            <button id="logoutBtn">OK</button>
+        </div>
+    `;
+
+            document.body.appendChild(modal);
+
+            document.getElementById("logoutBtn").addEventListener("click", handleLogout);
+        }
+
+        function sessionLogout() {
+            handleLogout();
+        }
+
+        document.addEventListener("mousemove", resetTimer);
+        document.addEventListener("keypress", resetTimer);
+        document.addEventListener("click", resetTimer);
+        document.addEventListener("scroll", resetTimer);
+
+        resetTimer();
+
+
+
+
+    </script>
+
+</body>
+
+</html>

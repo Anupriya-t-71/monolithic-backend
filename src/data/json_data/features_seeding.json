@@ -1,0 +1,1034 @@
+[
+  {
+    "id": 6,
+    "identity": "Categories",
+    "category": "admin",
+    "description": "Categories management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "identity": "Branch Details",
+    "category": "admin",
+    "description": "Details of a branch",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "identity": "Course Notes",
+    "category": "teacher",
+    "description": "Notes related to courses",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "identity": "Branches",
+    "category": "admin",
+    "description": "Branches management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "dee44b62-3ba8-453a-aaa9-8739d5cc6acd"
+  },
+  {
+    "id": 15,
+    "identity": "Students",
+    "category": "student",
+    "description": "Students management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "171f416b-0345-43f1-b279-02057dd930ef"
+  },
+  {
+    "id": 22,
+    "identity": "Live Classes",
+    "category": "teacher",
+    "description": "Live classes management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "f9fe1232-6013-43f7-a1f9-e086203c1250"
+  },
+  {
+    "id": 24,
+    "identity": "Student Attendances",
+    "category": "student",
+    "description": "Student attendance management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "65ce33f4-cb57-4c59-a080-b8eac9d22898"
+  },
+  {
+    "id": 26,
+    "identity": "Study Materials",
+    "category": "teacher",
+    "description": "Study materials management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "6345977a-6a55-403c-8c57-241e0ae1af66"
+  },
+  {
+    "id": 30,
+    "identity": "non_teaching_staff_attendance_details",
+    "category": "admin",
+    "description": "Details of non-teaching staff attendance",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "9a213292-78ae-403a-9792-6f68de62e3a9"
+  },
+  {
+    "id": 27,
+    "identity": "TeachingStaff Details",
+    "category": "teacher",
+    "description": "Details of a teaching staff member",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "5bcadafd-b022-4a81-888d-9543c3738f04"
+  },
+  {
+    "id": 16,
+    "identity": "Non TeachingStaff Details",
+    "category": "admin",
+    "description": "Details of a non-teaching staff member",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "72f9e221-536c-4248-b3df-2cbfc948baff"
+  },
+  {
+    "id": 23,
+    "identity": "LiveClass Details",
+    "category": "teacher",
+    "description": "Details of a live class",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "07ca5b25-78d3-4f10-9a01-a621cd4df693"
+  },
+  {
+    "id": 44,
+    "identity": "TeachingStaff Attendance Details",
+    "category": "teacher",
+    "description": "Details of teaching staff attendance",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "212955b9-dd3a-44d3-ab38-6e6893c644da"
+  },
+  {
+    "id": 32,
+    "identity": "staff_salaries",
+    "category": "admin",
+    "description": "Staff salaries management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "d0a8489a-2dce-4e05-9bdc-8f47af56b32f"
+  },
+  {
+    "id": 35,
+    "identity": "Subscriptions",
+    "category": "admin",
+    "description": "Subscriptions management",
+    "permission": [
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      }
+    ],
+    "uuid": "bca47672-c4b7-4470-83de-132fb29d80f2"
+  },
+  {
+    "id": 25,
+    "identity": "Student Attendances Details",
+    "category": "student",
+    "description": "Details of student attendance",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "82f77732-b852-4c85-9de9-6f56d257a918"
+  },
+  {
+    "id": 36,
+    "identity": "Staff Salary Details",
+    "category": "admin",
+    "description": "Details of staff salaries",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "5e85b193-5747-41b4-9a0b-44eedb073e64"
+  },
+  {
+    "id": 34,
+    "identity": "Student Notifications",
+    "category": "student",
+    "description": "Student notifications management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "745d06c4-d9ab-46b6-9b90-61ef846910cf"
+  },
+  {
+    "id": 41,
+    "identity": "student_idcards",
+    "category": "student",
+    "description": "Student ID cards management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "212fe004-7af7-445e-9fa6-147a54ed8376"
+  },
+  {
+    "id": 42,
+    "identity": "Staff IdCards",
+    "category": "admin",
+    "description": "Staff ID cards management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "c12142f9-9773-4341-b77e-1bdc7bd73552"
+  },
+  {
+    "id": 19,
+    "identity": "Batch Details",
+    "category": "teacher",
+    "description": "Details of a batch",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "af84cde2-8d17-4284-aa87-27b606dc59fe"
+  },
+  {
+    "id": 49,
+    "identity": "Faq Categories",
+    "category": "admin",
+    "description": "Categories of FAQs",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "2146da4a-088c-4ec9-ab1d-a9fcdc319604"
+  },
+  {
+    "id": 2,
+    "identity": "Groups",
+    "category": "admin",
+    "description": "Groups management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "e8723ca0-5ae9-4709-b949-0745f2e16756"
+  },
+  {
+    "id": 3,
+    "identity": "Group Details",
+    "category": "admin",
+    "description": "Details of a group",
+    "permission": [
+      {
+        "name": "read"
+      }
+    ],
+    "uuid": "6c26db16-4830-458b-b7f7-afb7149a6ada"
+  },
+  {
+    "id": 11,
+    "identity": "Course Modules",
+    "category": "teacher",
+    "description": "Modules of a course",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "afe74883-cc2b-47c9-a9b7-b194dd4f5742"
+  },
+  {
+    "id": 12,
+    "identity": "TeachingStaffs",
+    "category": "teacher",
+    "description": "Teaching staff management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "3c07bca4-f1e6-494f-b550-34cd1a0528be"
+  },
+  {
+    "id": 14,
+    "identity": "Non TeachingStaffs",
+    "category": "admin",
+    "description": "Non-teaching staff management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "55418372-95be-494a-b129-72988802170c"
+  },
+  {
+    "id": 18,
+    "identity": "Batches",
+    "category": "teacher",
+    "description": "Batches management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "b5c77579-d095-4942-9c6e-e0e3452471da"
+  },
+  {
+    "id": 43,
+    "identity": "TeachingStaff Attendances",
+    "category": "teacher",
+    "description": "Teaching staff attendance management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "f3b2aab4-1fbe-4ac8-86d9-73f5dfa5e7c2"
+  },
+  {
+    "id": 50,
+    "identity": "Help Faqs",
+    "category": "admin",
+    "description": "FAQs management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      },
+      {
+        "name": "read"
+      }
+    ],
+    "uuid": "6056c19c-88ed-438e-aed5-71e49fccefe4"
+  },
+  {
+    "id": 46,
+    "identity": "Community",
+    "category": "admin",
+    "description": "Community management",
+    "permission": [
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "b5628cbd-5c5e-4709-a5bf-551e234e96a4"
+  },
+  {
+    "id": 4,
+    "identity": "Users",
+    "category": "admin",
+    "description": "Users management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "2fc16f0f-8065-4567-9992-dd2c2c74e41f"
+  },
+  {
+    "id": 8,
+    "identity": "Course Details",
+    "category": "teacher",
+    "description": "Details of a course",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "d7d98cb6-1027-4942-b020-696ff6ef1cab"
+  },
+  {
+    "id": 21,
+    "identity": "OfflineClass Details",
+    "category": "student",
+    "description": "Details of an offline class",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "796180aa-a9db-48a6-857e-3ed2fa2705fe"
+  },
+  {
+    "id": 29,
+    "identity": "Student Fee Details",
+    "category": "student",
+    "description": "Details of student fees",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "6d2ba55f-a9aa-44fe-a5b1-095dbe509eca"
+  },
+  {
+    "id": 33,
+    "identity": "Subscription Details",
+    "category": "admin",
+    "description": "Details of subscriptions",
+    "permission": [
+      {
+        "name": "read"
+      }
+    ],
+    "uuid": "d8d8e060-803e-4a5b-9dca-65781568811c"
+  },
+  {
+    "id": 37,
+    "identity": "Staff Notifications",
+    "category": "admin",
+    "description": "Staff notifications management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "e762bc46-3805-43ef-af88-18d5360c06ef"
+  },
+  {
+    "id": 1,
+    "identity": "dashboard",
+    "description": "Dashboard feature for overview",
+    "category": "admin",
+    "permission": [
+      {
+        "name": "read"
+      }
+    ],
+    "uuid": "5bfe5da1-8057-44c5-ad07-3b3abb3d6935"
+  },
+  {
+    "id": 5,
+    "identity": "User Details",
+    "category": "admin",
+    "description": "Details of a user",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "7d0d0ee7-9f7e-4ffb-9003-36e309171404"
+  },
+  {
+    "id": 7,
+    "identity": "Courses",
+    "category": "student",
+    "description": "Courses management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "ff0983b5-9e35-4008-b715-d863f3d8772d"
+  },
+  {
+    "id": 17,
+    "identity": "Student Details",
+    "category": "student",
+    "description": "Details of a student",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "c0f5a5c6-7679-48da-b442-405fe9ad0826"
+  },
+  {
+    "id": 28,
+    "identity": "NonTeachingStaff Attendances",
+    "category": "admin",
+    "description": "Non-teaching staff attendance management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "96844d5c-4fb6-46d4-b3e1-a3c03e66149f"
+  },
+  {
+    "id": 40,
+    "identity": "Student Certificate Details",
+    "category": "student",
+    "description": "Details of student certificates",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "b2e9d7c4-dfaf-441d-bc18-8b9692ea786d"
+  },
+  {
+    "id": 45,
+    "identity": "Faqs",
+    "category": "student",
+    "description": "Frequently asked questions",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "fa0108cb-24e1-494b-9e84-8bed88bea3e2"
+  },
+  {
+    "id": 47,
+    "identity": "Student Tickets",
+    "category": "student",
+    "description": "Student support tickets management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "58fba30b-85c6-4558-99f1-d1e5024b520c"
+  },
+  {
+    "id": 20,
+    "identity": "Offline Classes",
+    "category": "student",
+    "description": "Offline classes management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "1949382a-c742-477c-82b6-a2dbffab1e0b"
+  },
+  {
+    "id": 31,
+    "identity": "Student Fees",
+    "category": "student",
+    "description": "Student fees management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "bd67b3aa-f363-4429-b25a-ee5c159dcef8"
+  },
+  {
+    "id": 38,
+    "identity": "All Notifications",
+    "category": "admin",
+    "description": "All notifications management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "d40370ec-c32f-454d-81e2-f5f8c78ee986"
+  },
+  {
+    "id": 39,
+    "identity": "Student Certificates",
+    "category": "student",
+    "description": "Student certificates management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "b8e12406-ff1f-4af5-87de-8738fadaacc3"
+  },
+  {
+    "id": 48,
+    "identity": "staff_tickets",
+    "category": "admin",
+    "description": "staff support tickets management",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "53218485-f53b-4e42-ac1f-2a44ccf276b6"
+  },
+  {
+    "id": 51,
+    "identity": "Fees",
+    "category": "student",
+    "description": "Student Fees",
+    "permission": [
+      {
+        "name": "create"
+      },
+      {
+        "name": "read"
+      },
+      {
+        "name": "update"
+      },
+      {
+        "name": "delete"
+      }
+    ],
+    "uuid": "7b8d3152-a8e1-4766-be04-0e0642bc064f"
+  }
+]

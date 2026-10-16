@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s ease-in-out;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    form {
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #555;
+    }
+
+    input {
+      width: 95%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    button:hover:not(:disabled) {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .response-message {
+      margin-top: 15px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .success {
+      color: green;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .link {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .link a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Forgot Password</h2>
+    <form id="forgotPasswordForm">
+      <label for="email">Enter your email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your registered email" required autocomplete="off" />
+
+      <button type="submit" id="submitButton">Send OTP</button>
+      <p id="responseMessage" class="response-message"></p>
+    </form>
+    <div class="link">
+      <a href="/api/developer/login">Back to Login</a>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("forgotPasswordForm");
+    const messageElement = document.getElementById("responseMessage");
+    const submitButton = document.getElementById("submitButton");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value.trim();
+      if (!email) return;
+
+      messageElement.textContent = "";
+      messageElement.className = "response-message";
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+
+      try {
+        const response = await fetch("/api/developer/forgot-password", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          localStorage.setItem('token', result.data.token);
+          localStorage.setItem('email', result.data.email)
+          messageElement.textContent = "OTP sent your email";
+          messageElement.classList.add("success");
+          setTimeout(() => {
+            window.location.href = "/api/developer/reset-password";
+          }, 2000);
+        } else {
+          messageElement.textContent = `⚠️ ${result.message || "Failed to send reset OTP."}`;
+          messageElement.classList.add("error");
+        }
+      } catch (error) {
+        console.error("Error sending reset OTP:", error);
+        messageElement.textContent = "❌ An error occurred. Please try again later.";
+        messageElement.classList.add("error");
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send OTP Your Email";
+      }
+    });
+  </script>
+
+</body>
+</html>

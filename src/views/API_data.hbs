@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Logs</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Logs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Method</th>
+                <th>Endpoint</th>
+                <th>Status</th>
+                <th>Message</th>
+                <th>Request Body</th>
+                <th>Response Body</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each logs}}
+            <tr>
+                <td>{{this.method}}</td>
+                <td>{{this.endpoint}}</td>
+                <td>{{this.status}}</td>
+                <td>{{this.message}}</td>
+                <td><pre>{{json this.requestBody}}</pre></td>
+                <td><pre>{{json this.responseBody}}</pre></td>
+                <td>{{this.timestamp}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+</html>

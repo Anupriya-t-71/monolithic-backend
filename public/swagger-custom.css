@@ -1,0 +1,19 @@
+/* Adjust filter tag box size */
+.swagger-ui .topbar .filter-wrapper {
+  width: 30px; /* Adjust the width as needed */
+  position: relative; /* Ensure that positioning works correctly */
+}
+
+
+.swagger-ui .topbar {
+  display: flex;
+  justify-content: center;
+}
+
+.swagger-ui .topbar .filter-wrapper input[type="text"] {
+  padding-left: 30px; 
+  background: url('/public/images/project.emernlogo.png') no-repeat; 
+  background-size: 20px 20px; 
+  background-position: 5px center; 
+  box-sizing: padding-box; 
+}

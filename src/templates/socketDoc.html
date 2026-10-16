@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>eflow SOCKET EVENTS DOCUMENTATION</h1>
+
+    <div>
+        <h4>INTRODUCTION</h4>
+        <P>Socket Communication allows realtime message in community(group) room chats are connected Student, teacher and admin.</P>
+    </div>
+
+    <div>
+        <h2>GENERAL SOCKET SETUP</h2>
+        <P>Make connection in client side. each client to connect web socket by using.</P>
+        <p>const socket = io.connect("socket server url") </p>
+
+        <div>
+            <h3>Server connect Events</h3>
+            <p>its create for server side listern. to waiting trigger for connect events</p>
+            <p>io.on("connect",(socket)=>{ write your code })</p>
+        </div>
+
+        <div>
+            <h3>Server disconnet Events</h3>
+            <p>its create for server to disconneted</p>
+            <p>socket.on("disconnect",()=>{write your code})</p>
+        </div>
+    </div>
+
+    <div>
+        <h2>Community(group) Chat Socket Events</h2>
+        <p>those events are make realtime communication between client and server</p>
+
+        <div>
+            <h3>Join events</h3>
+            <p>join events for each clients (student, teacher and admin) to join community(group) chat rooms.</p>
+            <p>Server side: socket.on("join",(data)=>{write your code})</p>
+            <p>Client side: socket.emmit("join",data)</p>
+            <p>data:{groupId,userId}</p>
+        </div>
+
+        <div>
+            <h3>Send Message Event</h3>
+            <p>student, teacher and admin to use this event for realtime transfer the message in group chat</p>
+            <p>Server Side: socket.on("sendmessage",(data)=>{write your code})</p>
+            <p>Client side: socket.emit("sendmessage",data)</p>
+            <p>data: {groupId, userId, message}</p>
+        </div>
+
+        <div>
+            <h3>Recive Messsage Event</h3>
+            <p>each client are recived the previous and current message to used this event</p>
+            <p>Server Side: io.to(groupId).emit("message",{message})</p>
+            <p>Client Side: socket.on("message",{message})</p>
+            <p>{message} recived sender message and transfer emit by groupId</p>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="eflow">
+    <link rel="icon" href="/images/project.emernlogo.png" type="image/png" />
+    <title>eflow</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        main {
+            margin-bottom: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            color: #333;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tbody tr:hover {
+            background-color: #f0f0f0;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to eflow Backend</h1>
+        </header>
+        <main>
+            <p>
+                {{!-- <embed src="http://192.168.29.174:3001/staticfiles/eflow/31a1d881-2066-48c0-8412-eb749d11b73a.pdf" type="application/pdf" width="100%" height="600px" /> --}}
+                {{!-- Hello, {{name}}! --}}
+                 {{!-- Welcome to our website. --}}
+                 </p>
+            <img src="/images/project.emernlogo.png" alt="logo" > 
+            <h2>API Routes</h2>
+            {{#each groupedEndpoints}}
+            <h3>{{@key}}</h3> 
+            <table>
+                <thead>
+                    <tr>
+                        <th>Method</th>
+                        <th>Path</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each this}}
+                    <tr>
+                        <td>{{methods}}</td>
+                        <td>{{path}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{/each}}
+        </main>
+    </div>
+    <footer>
+        &copy; {{currentYear}} eflow project.emern
+    </footer>
+</body>
+</html>

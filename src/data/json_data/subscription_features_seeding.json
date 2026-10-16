@@ -1,0 +1,56 @@
+[
+  {
+    "id": 2,
+    "identity": "Admins",
+    "description": null
+  },
+  {
+    "id": 6,
+    "identity": "Branch",
+    "description": null
+  },
+  {
+    "id": 8,
+    "identity": "Courses",
+    "description": null
+  },
+  {
+    "id": 3,
+    "identity": "Batches",
+    "description": null
+  },
+  {
+    "id": 1,
+    "identity": "Students",
+    "description": null
+  },
+  {
+    "id": 7,
+    "identity": "Teachers",
+    "description": null
+  },
+  {
+    "id": 4,
+    "identity": "community-support",
+    "description": null
+  },
+  {
+    "id": 5,
+    "identity": "customer-support",
+    "description": null
+  },
+  {
+    "id": 9,
+    "identity": "Staffs",
+    "description": null,
+    "is_active": true,
+    "is_deleted": false
+  },
+  {
+    "id": 10,
+    "identity": "Class",
+    "description": null,
+    "is_active": true,
+    "is_deleted": false
+  }
+]

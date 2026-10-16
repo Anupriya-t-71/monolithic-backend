@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 380px;
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #333;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border 0.3s ease-in-out;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    button {
+      padding: 12px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .link {
+      margin-top: 12px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .link a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+
+    .message {
+      text-align: center;
+      font-size: 14px;
+      margin-top: auto;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      padding: 6px 0;
+    }
+
+    .error-message {
+      color: #d93025;
+    }
+
+    .success-message {
+      color: #188038;
+    }
+
+    .loading {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid white;
+      border-radius: 50%;
+      border-top: 2px solid transparent;
+      animation: spin 0.6s linear infinite;
+      margin-left: 10px;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <button type="submit">
+        Login <span id="loadingSpinner" class="loading" style="display: none;"></span>
+      </button>
+
+      <!-- Messages inside form, bottom center -->
+      <div id="errorMessage" class="message error-message"></div>
+      <div id="successMessage" class="message success-message"></div>
+    </form>
+
+    <div class="link">
+      <a href="/api/developer/forgot-password">Forgot Password?</a>
+    </div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('errorMessage');
+    const successMessage = document.getElementById('successMessage');
+    const submitButton = document.querySelector('button[type="submit"]');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Reset messages
+      errorMessage.style.opacity = '0';
+      successMessage.style.opacity = '0';
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Disable button & show loading spinner
+      submitButton.disabled = true;
+      loadingSpinner.style.display = 'inline-block';
+
+      try {
+        const response = await fetch('/api/developer/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.json();
+        console.log("Response Data:", data);
+
+        if (response.ok && data.data) {
+          localStorage.setItem('email', data.data.email);
+
+          if (data.data.token) {
+            localStorage.setItem('token', data.data.token);
+          }
+
+          if (data.data.otp_status === true) {
+            displayMessage(successMessage, 'OTP sent to your email');
+            setTimeout(() => {
+              window.location.href = '/api/developer/verify';
+            }, 1000);
+          } else {
+            displayMessage(successMessage, 'Login Successful');
+            setTimeout(() => {
+              window.location.href = '/api/developer';
+            }, 1000);
+          }
+        } else {
+          displayMessage(errorMessage, data.message || 'Invalid email or password');
+        }
+      } catch (error) {
+        console.error('Error during login:', error);
+        displayMessage(errorMessage, 'An error occurred. Please try again later.');
+      } finally {
+        submitButton.disabled = false;
+        loadingSpinner.style.display = 'none';
+      }
+    });
+
+    function displayMessage(element, message) {
+      errorMessage.textContent = '';
+      successMessage.textContent = '';
+      element.textContent = message;
+      setTimeout(() => {
+        element.style.opacity = '1';
+      }, 100);
+    }
+  </script>
+</body>
+</html>

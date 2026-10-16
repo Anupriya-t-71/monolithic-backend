@@ -1,0 +1,91 @@
+      <div class="submenu">
+      <ul><strong>Instuties</strong>
+        <li class="submenu-item">
+          <a href="#">Administration</a>
+          <ul class="nested-list">
+            <li><a href="#" >Student</a></li>
+            <li><a href="#">Non-staff</a></li>
+            <li><a href="#">staff</a></li>
+            <li><a href="#">Profilerequest</a></li>
+            <li><a href="#">Institute_Admin</a></li>
+          </ul>
+        </li>
+        <li class="submenu-item" ><a href="#">Attendance</a>
+          <ul class="nested-list">
+            <li><a href="#">Nonteaching_staff</a></li>
+            <li><a href="#">staff</a></li>
+            <li><a href="#">Commonattendance</a></li>
+          </ul>
+        </li>
+        <li class="submenu-item"><a href="#">Authorization</a></li>
+        <li class="submenu-item"><a href="#">Authorization</a></li>
+        <li class="submenu-item"><a href="#">Batch</a></li>
+        <li class="submenu-item"><a href="#">Branch</a></li>
+        <li class="submenu-item"><a href="#">Certificate</a></li>
+        <li class="submenu-item" ><a href="#">Class</a>
+          <ul class="nested-list">
+            <li><a href="#">Online</a></li>
+            <li><a href="#">Offline</a></li>
+          </ul>
+        </li>
+        <li class="submenu-item"><a href="#">Community</a>
+          <ul class="nested-list">
+            <li><a href="#">Chat_Router</a></li>
+            <li><a href="#">Message_Router</a></li>
+          </ul>
+        </li>
+        <li class="submenu-item"><a href="#">Course</a>
+          <ul class="nested-list">
+            <li><a href="#">Categroy_route</a></li>
+            <li><a href="#">Course_route</a></li>
+            <li><a href="#">Module_route</a></li>
+            <li><a href="#">Note_route</a></li>
+            <li><a href="#">StudyMaterial</a></li>
+          </ul>
+        </li>
+        <li class="submenu-item"><a href="">Event</a></li>
+        <li class="submenu-item"><a href="">Faq</a></li>
+        <li class="submenu-item"><a href="">Help_center</a></li>
+        <li class="submenu-item"><a href="">Instutie</a></li>
+        <li class="submenu-item"><a href="">Id_card</a></li>
+        <li class="submenu-item"><a href="#">Notification</a>
+          <ul class="nested-list">
+            <li><a href="#">Common</a></li>
+            <li><a href="#">Student</a></li>
+            <li><a href="#">Staff</a></li>
+          </ul>
+        </li>
+        <li class="submenu-item"><a href="#">Payment</a>
+          <ul class="nested-list">
+            <li><a href="#">Refund</a></li>
+            <li><a href="#">Staff_salary</a></li>
+            <li><a href="#">Student_fees</a></li>
+            <li><a href="#">Subscription</a></li>
+          </ul>
+        </li>
+        <li><a href="">Reports</a></li>
+        <li class="submenu-item"><a href="#">Ticket</a>
+          <ul class="nested-list">
+            <li><a href="#">Admin_Ticket</a></li>
+            <li><a href="#">Nonteaching_staff</a></li>
+            <li><a href="#">Student</a></li>
+            <li><a href="#">Staff</a></li>
+          </ul></li>
+        <li><a href="">User</a></li>
+        <li class="submenu-item"><a href="#"><strong>Administration</strong></a>
+          <ul class="nested-list">
+            <li><a href="#">Authorization</a></li>
+            <li><a href="#">Roles_Permision</a></li>
+            <li><a href="#">Subscription</a></li>
+          </ul></li>
+        <li class="submenu-item"><a href="#"><strong>Platform</strong></a>
+          <ul class="nested-list">
+            <li><a href="#">FAQ_Categroy</a></li>
+            <li><a href="#">Payment</a></li>
+          </ul></li>
+          <li><a href=""><strong>Reports</strong></a></li>
+          <li><a href=""><strong>Upload</strong></a></li>
+          <li><a href=""><strong>Test</strong></a></li>
+        </ul>
+    </div>
+  </div>

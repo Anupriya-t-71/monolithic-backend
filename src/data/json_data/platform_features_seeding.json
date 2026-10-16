@@ -1,0 +1,122 @@
+[
+  {
+    "id": 6,
+    "identity": "faq",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 9,
+    "identity": "faq-category",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 8,
+    "identity": "roles",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 14,
+    "identity": "feature",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 15,
+    "identity": "permissions",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 2,
+    "identity": "institute",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 11,
+    "identity": "ticket",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 10,
+    "identity": "subscription-payments",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 3,
+    "identity": "subscription-plans",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 7,
+    "identity": "institute-admin",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 13,
+    "identity": "chat",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 1,
+    "identity": "subscription-features",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 4,
+    "identity": "institute-primary-branch",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 5,
+    "identity": "users",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "id": 12,
+    "identity": "notification",
+    "description": null,
+    "is_active": true,
+    "is_delete": false
+  },
+  {
+    "identity": "institute_all",
+    "description": null,
+    "is_active": true,
+    "is_delete": false,
+    "id": 16
+   
+  },
+  {
+    "description": null,
+    "is_active": true,
+    "is_delete": false,
+    "id": 17,
+    "identity": "institute-branches"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "identity": "Institute Admin",
+    "description": "Administrator role with full access",
+    "id": "1"
+  },
+  {
+    "identity": "Teaching Staff",
+    "description": "Teacher role with specific permissions",
+    "id": "2"
+  },
+  {
+    "identity": "Student",
+    "description": "Student role for limited access",
+    "id": "3"
+  }
+ 
+]

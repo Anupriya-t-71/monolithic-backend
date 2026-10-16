@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation Overview</title>
+  {{!-- <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fa;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+section {
+  padding: 20px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  color: #333;
+}
+h3 {
+  color: #007bff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin: 10px 0;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+code {
+  display: block;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+</style> --}}
+<style>
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        background: white;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #0056b3;
+    }
+
+    h2, h3, h4 {
+        color: #007BFF;
+        margin-top: 20px;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    .endpoint {
+        background: #eef5ff;
+        padding: 15px;
+        border-left: 5px solid #007BFF;
+        margin-top: 15px;
+        border-radius: 5px;
+    }
+
+    pre {
+        background: #1e1e1e;
+        color: #f8f8f2;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        font-size: 14px;
+    }
+
+    code {
+        font-family: "Courier New", monospace;
+    }
+
+    .method {
+        font-weight: bold;
+        color: #d9534f;
+    }
+
+    .endpoint p strong {
+        color: #333;
+    }
+
+    @media screen and (max-width: 768px) {
+        .container {
+            width: 95%;
+            padding: 15px;
+        }
+    }
+</style>
+
+</style>
+</head>
+<body>
+  <header>
+    <h1>eflow - API Documentation</h1>
+  </header>
+
+ 
+ 
+       <h2>Introduction</h2>
+    <p>The Learning Management System (eflow) API is designed to help institutions manage courses, students, attendance, assessments, and reports efficiently. This documentation provides a detailed guide on how to interact with the eflow API.</p>
+
+    <h2>Authentication</h2>
+    <p>All API requests must include an authentication token in the header.</p>
+    <pre><code>{ "Authorization": "Bearer YOUR_ACCESS_TOKEN" }</code></pre>
+
+    <h2>Base URL</h2>
+    <pre><code>https://api.youreflow.com/v1</code></pre>
+
+    <h2>Endpoints</h2>
+
+    <h3>1. User Management</h3>
+    <div class="endpoint">
+        <h4>Register a User</h4>
+        <p><strong>Method:</strong> POST | <strong>Endpoint:</strong> /users/register</p>
+        <pre><code>{ "name": "John Doe", "email": "johndoe@example.com", "password": "password123" }</code></pre>
+        <pre><code>{ "message": "User registered successfully", "userId": "12345" }</code></pre>
+    </div>
+
+    <div class="endpoint">
+        <h4>User Login</h4>
+        <p><strong>Method:</strong> POST | <strong>Endpoint:</strong> /users/login</p>
+        <pre><code>{ "email": "johndoe@example.com", "password": "password123" }</code></pre>
+        <pre><code>{ "token": "your_jwt_token" }</code></pre>
+    </div>
+
+    <h3>2. Institute Management</h3>
+    <div class="endpoint">
+        <h4>Create an Institute</h4>
+        <p><strong>Method:</strong> POST | <strong>Endpoint:</strong> /institutes</p>
+        <pre><code>{ "name": "XYZ Institute", "address": "123 Main Street", "contact": "9876543210" }</code></pre>
+        <pre><code>{ "message": "Institute created successfully", "instituteId": "67890" }</code></pre>
+    </div>
+
+    <h3>3. Course Management</h3>
+    <div class="endpoint">
+        <h4>Create a Course</h4>
+        <p><strong>Method:</strong> POST | <strong>Endpoint:</strong> /courses</p>
+        <pre><code>{ "name": "Java Programming", "description": "Introduction to Java", "instituteId": "67890" }</code></pre>
+        <pre><code>{ "message": "Course created successfully", "courseId": "445566" }</code></pre>
+    </div>
+
+    <h3>4. Student Management</h3>
+    <div class="endpoint">
+        <h4>Add a Student</h4>
+        <p><strong>Method:</strong> POST | <strong>Endpoint:</strong> /students</p>
+        <pre><code>{ "name": "Alice Smith", "email": "alice@example.com", "instituteId": "67890" }</code></pre>
+        <pre><code>{ "message": "Student added successfully", "studentId": "112233" }</code></pre>
+    </div>
+
+    <h3>5. Attendance Management</h3>
+    <div class="endpoint">
+        <h4>Mark Attendance</h4>
+        <p><strong>Method:</strong> POST | <strong>Endpoint:</strong> /attendance</p>
+        <pre><code>{ "studentId": "112233", "date": "2025-01-31", "status": "Present" }</code></pre>
+        <pre><code>{ "message": "Attendance marked successfully" }</code></pre>
+    </div>
+
+    <h3>6. Report Generation</h3>
+    <div class="endpoint">
+        <h4>Generate Student Report</h4>
+        <p><strong>Method:</strong> GET | <strong>Endpoint:</strong> /reports/student/112233</p>
+        <pre><code>{ "studentId": "112233", "attendance": "95%", "grades": "A" }</code></pre>
+    </div>
+
+    <h2>Error Handling</h2>
+    <p>All API responses include a status code indicating success or failure.</p>
+    <pre><code>{ "error": "Invalid credentials" }</code></pre>
+</div> 
+ <footer>
+    <p>API Documentation by Your Company</p>
+  </footer>
+</body>
+</html>

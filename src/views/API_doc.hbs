@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+   <style>
+body {
+   font-family: 'Roboto', Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #eef1f5;
+   color: #333;
+}
+.container {
+   display: flex;
+   min-height: 100vh;
+}
+.sidebar {
+   width: 300px;
+   background-color: #34495e;
+   color: #fff;
+   padding: 20px;
+   overflow-y: auto;
+   position: sticky;
+   height: 100vh;
+   top: 0;
+   box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+   padding-left: 0;
+}
+.sidebar a {
+   color: #ecf0f1;
+   text-decoration: none;
+   display: block;
+   padding: 10px;
+   border-radius: 5px;
+   transition: all 0.3s ease-in-out;
+    
+}
+.sidebar a:hover {
+   background-color: #1abc9c;
+   color: #fff;
+}
+ul {
+   list-style: none;
+  
+}
+.submenu ul {
+   list-style: none;
+   padding-left: 15px;
+   display: none;
+   transition: all 0.3s ease-in-out;
+}
+.submenu ul li {
+   margin: 8px 0;
+}
+.nested-list {
+   list-style: none;
+   display: none;
+   transition: all 0.3s ease-in-out;
+}
+.api-details {
+   flex: 1;
+   padding: 30px;
+   overflow-y: auto;
+}
+.endpoint {
+   margin: 20px 0;
+   padding: 15px;
+   background: white;
+   border-radius: 8px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   transition: transform 0.2s;
+}
+.endpoint:hover {
+   transform: scale(1.02);
+}
+pre {
+   background: #2c3e50;
+   color: #abb2bf;
+   padding: 15px;
+   border-radius: 8px;
+   overflow-x: auto;
+}
+.endpoint, .overview {
+   display: none;
+   margin: 20px 0;
+   padding: 15px;
+   background: white;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#api-image {
+   max-width: 100%;
+   height: 500px;
+   display: block;
+   margin: 20px auto;
+}
+.sidebar-content {
+   display: block;
+}
+.search-box {
+   margin-bottom: 20px;
+   padding: 10px;
+   width: 100%;
+   display: none;
+   box-sizing: border-box;
+}
+.search-input {
+   color: #333;
+   font-size: 1rem;
+   font-weight: 400;
+   border: none;
+   border-bottom: 2px solid #6200ee;
+   padding: 8px;
+   border-radius: 4px;
+   width: 100%;
+   background: #fff;
+   transition: border-color 0.3s ease-in-out;
+}
+.search-input:focus {
+   border-color: #1abc9c;
+   outline: none;
+}
+.button {
+   cursor: pointer;
+   position: relative;
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   padding: 1rem 2rem;
+   background-color: transparent;
+   border: none;
+   border-radius: 50px;
+   transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+.button:hover {
+   transform: scale(1.05);
+   background-color: #1abc9c;
+   color: white;
+}
+.input-container {
+   position: relative;
+   width: 100%;
+   margin: 20px auto;
+}
+.input-container input[type="text"] {
+   font-size: 18px;
+   color: #fff;
+   border: none;
+   border-bottom: 2px solid #a5a2a2;
+   outline: none;
+   width: 100%;
+   background-color: transparent;
+   transition: border-color 0.3s ease-in-out;
+}
+.label {
+   transition: all 0.3s ease-in-out;
+   color: #d3d2d2;
+   position: absolute;
+   top: 0;
+   left: 0;
+   pointer-events: none;
+}
+.input-container input[type="text"]:focus ~ .label,
+.input-container input[type="text"]:valid ~ .label {
+   top: -20px;
+   color: #6200ee;
+}
+.input-container .underline {
+   position: absolute;
+   bottom: 4px;
+   left: 0;
+   height: 2px;
+   width: 100%;
+   background-color: #6200ee;
+   transform: scaleX(0);
+   transition: transform 0.3s ease-in-out;
+}
+.input-container input[type="text"]:focus ~ .underline {
+   transform: scaleX(1);
+}
+    table {
+        width: 78%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #000;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2; 
+    }
+    pre {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+</style>
+
+</head>
+<body>
+<div class="container">
+  <div class="sidebar">
+
+        <h4><a href="http://localhost:3002/api_doc/overview">OVERVIEW</a></h4>
+        <h4 ><a href="#" onclick="showAllEndpoints()">API_Managment</a></h4>
+        <div>
+          <ul class="sidebar-content">
+            
+        <li class="submenu-item" ><a href="#" data-category="Instuties"><strong >Instuties</strong>  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(100, 4)"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></a>
+        <ul class="nested-list">
+            <li class="submenu-item">
+          <a href="#" data-category="administration">Administration <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(55, 4)"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></a>
+          <ul class="nested-list">
+            <li><a href="#" data-category="student" >Student</a></li>
+            <li><a href="#" data-category="non Staff">Non-staff</a></li>
+            <li><a href="#" data-category="Staff">staff</a></li>
+            <li><a href="#" data-category="ProfileRequest">Profilerequest</a></li>
+            <li><a href="#" data-category="instuiteAdmin">Institute_Admin</a></li>
+          </ul>
+            </li>
+        <li class="submenu-item"  ><a href="#" data-category="Attendence">Attendance <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(75, 4)"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></a>
+          <ul class="nested-list">
+            <li><a href="#" data-category="nonteaching-staff">Nonteaching_staff</a></li>
+            <li><a href="#" data-category="staff">staff</a></li>
+            <li><a href="#" data-category="commonattendance">Commonattendance</a></li>
+          </ul>
+        </li>
+        <li class="submenu-item" ><a href="#" data-category="authorization">Authorization</a></li>
+        <li class="submenu-item" ><a href="#" data-category="Batch">Batch</a></li>
+        <li class="submenu-item" ><a href="#" data-category="Branch">Branch</a></li>
+        <li class="submenu-item" ><a href="#" data-category="Certificate">Certificate</a></li>
+        <li class="submenu-item"  ><a href="#" data-category="Class">Class <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(120, 4)"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></a>
+          <ul class="nested-list">
+            <li><a href="#" data-category="Online">Online</a></li>
+            <li><a href="#" data-category="Offline">Offline</a></li>
+          </ul>
+        </li>
+        <li class="submenu-item" ><a href="#" data-category="community">Community <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(80, 4)"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></a>
+          <ul class="nested-list">
+            <li><a href="#" data-category="chat-router">Chat_Router</a></li>
+            <li><a href="#" data-category="message-router">Message_Router</a></li>
+          </ul>
+        </li>
+        <li class="submenu-item" ><a href="#" data-category="course">Course <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(108, 4)"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></a>
+          <ul class="nested-list">
+            <li><a href="#" data-category="categroy-route">Categroy_route</a></li>
+            <li><a href="#" data-category="course-route">Course_route</a></li>
+            <li><a href="#" data-category="module-route">Module_route</a></li>
+            <li><a href="#" data-category="note-route">Note_route</a></li>
+            <li><a href="#" data-category="study-material">StudyMaterial</a></li>
+          </ul>
+        </li>
+        <li class="submenu-item"><a href="#" data-category="event">Event</a></li>
+        <li class="submenu-item"><a href="#" data-category="faq">Faq</a></li>
+        <li class="submenu-item"><a href="#" data-category="help-center">Help_center</a></li>
+        <li class="submenu-item"><a href="#" data-category="instutie">Instutie</a></li>
+        <li class="submenu-item"><a href="#" data-category="id-card">Id_card</a></li>
+        <li class="submenu-item"><a href="#" data-category="notification">Notification <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(79, 4)"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></a>
+          <ul class="nested-list">
+            <li><a href="#" data-category="common">Common</a></li>
+            <li><a href="#" data-category="student">Student</a></li>
+            <li><a href="#" data-category="staff">Staff</a></li>
+          </ul>
+        </li>
+        <li class="submenu-item"><a href="#" data-category="payment">Payment <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(95, 4)"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></a>
+          <ul class="nested-list">
+            <li><a href="#" data-category="refund">Refund</a></li>
+            <li><a href="#" data-category="staff-salary">Staff_salary</a></li>
+            <li><a href="#" data-category="student-fees">Student_fees</a></li>
+            <li><a href="#" data-category="subscription">Subscription</a></li>
+          </ul>
+        </li>
+        <li><a href="#" data-category="reports">Reports</a></li>
+        <li class="submenu-item"><a href="#" data-category="ticket">Ticket <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(114, 4)"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></a>
+          <ul class="nested-list">
+            <li><a href="#" data-category="admin-ticket">Admin_Ticket</a></li>
+            <li><a href="#" data-category="nonteaching-staff">Nonteaching_staff</a></li>
+            <li><a href="#" data-category="student">Student</a></li>
+            <li><a href="#" data-category="staff">Staff</a></li>
+          </ul></li>
+        <li><a href="#" data-category="user">User</a></li>
+
+        </ul>
+        </li> 
+        
+        <li class="submenu-item"><a href="#" data-category="platform"><strong>Administration</strong> <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(53, 4)"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></a>
+          <ul class="nested-list">
+            <li><a href="#" data-category="authorization">Authorization</a></li>
+            <li><a href="#" data-category="roles-permision">Roles_Permision</a></li>
+            <li><a href="#" data-category="subscription">Subscription</a></li>
+          </ul></li>
+        <li class="submenu-item"><a href="#" data-category="platform"><strong>Platform</strong> <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(100, 4)"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg></a>
+          <ul class="nested-list">
+            <li><a href="#" data-category="faq-categroy">FAQ_Categroy</a></li>
+            <li><a href="#" data-category="payment">Payment</a></li>
+          </ul></li>
+          <li><a href="#" data-category="reports"><strong>Reports</strong></a></li>
+          <li><a href="#" data-category="upload"><strong>Upload</strong></a></li>
+          <li><a href="#"><strong data-category="test">Test</strong></a></li>
+        </ul>
+    </div>
+    </div>
+<div class="api-details">
+  <div>
+<h1 style="font-size: 24px; font-weight: bold; color: black;">eflow API Documentation</h1>
+
+     <div class="overview" id="overview-section">
+      <h2>API Overview</h2>
+      <h3>Authentication</h3>
+      <p>All API requests must include an authentication token in the header.</p>
+      <pre><code class="language-json">{
+  "Authorization": "Bearer YOUR_ACCESS_TOKEN"
+}</code></pre>
+      <h3>Base URL</h3>
+      <p><code>https://api.youreflow.com/v1</code></p>
+      <h3>Example Request</h3>
+      <pre><code class="language-javascript">fetch('https://api.youreflow.com/v1/students', {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => response.json())
+.then(data => console.log(data));</code></pre>
+</div>
+
+ 
+<span id="searchInput" class="search-box">
+  <button class="button" onclick="applyThirdWordFilter()">
+  <div class="dots_border"></div>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    class="sparkle"
+  >
+    <path
+      class="path"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke="black"
+      fill="black"
+      d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z"
+    ></path>
+    <path
+      class="path"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke="black"
+      fill="black"
+      d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z"
+    ></path>
+    <path
+      class="path"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      stroke="black"
+      fill="black"
+      d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z"
+    ></path>
+  </svg>
+  <span class="text_button">Find The Api Shortcut</span>
+</button>
+<input type="search"   class="search-input" placeholder="Search endpoints..." onkeyup="filterEndpoints()">
+</span>
+        {{#each endpoints}}
+            <div class="endpoint"> 
+ <div class="endpointDetails">
+  <button id="editBtn" onclick="enableEdit()" style="background-color:green; color: white; padding-left:10px;padding-right:10px;padding-top:2px;padding-bottom:2px">Edit</button>
+<button id="saveBtn" style="display: none;" onclick="saveChanges('{{this.id}}')">
+    Save
+</button>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        
+         <div>
+        <label>NAME</label>
+        <h2 id="nameField">{{this.name}}</h2>
+    </div>
+
+
+       
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <label>METHOD</label>
+            <span style="background-color: #16a34a; color: white; padding: 4px 12px; font-size: 14px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s;" id="methodField"
+                  onmouseover="this.style.backgroundColor='#15803d'" 
+                  onmouseout="this.style.backgroundColor='#16a34a'">
+                {{this.method}}
+            </span>
+        </div>
+    </div>
+</div>
+
+
+
+                <div>
+             <div>
+  <div style="font-size: 14px; font-weight: 700; margin-bottom: 8px; margin-top: 18px;">Endpoint</div>
+  <div style="display: flex; align-items: center; gap: 8px; background-color: #f3f4f6; padding: 12px; border-radius: 6px;">
+    <code style="font-size: 14px;" id="routeField">{{this.route}}</code>
+    <button 
+      onclick="copyToClipboard('{{this.route}}')" 
+      style="margin-left: auto; height: 32px; width: 32px; background: transparent; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M10 4V1H3a1 1 0 0 0-1 1v10h2V4h6zM4 5v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1zm2 1h6v8H6V6z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+                   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+  <div>
+    <p style="font-size: 14px; font-weight: 500; margin-bottom: 8px;">
+      <strong>Group</strong> <div>{{this.groups}}</div>
+    </p>
+  </div>
+  <div>
+    <p style="font-size: 14px; font-weight: 500; margin-bottom: 8px;">
+      <strong>Category</strong> <div>{{this.category}}</div>
+    </p>
+  </div>
+  <div>
+ <p style="font-size: 14px; font-weight: 500; margin-bottom: 8px; color: rgb(37, 116, 219);" class="search-val">
+  <strong style="display: inline-block; margin-bottom: 10px;">SubCategory</strong><br>
+  {{this.subcategory}}
+</p>
+
+  </div>
+</div>
+
+                    <div>
+  <div style="font-size: 14px; font-weight: 700; margin-bottom: 15px;">Description</div>
+  <div style="display: flex; align-items: center; gap: 8px; font-size: 14px; color: #6c757d;">
+    <svg 
+      style="height: 16px; width: 16px;" 
+      xmlns="http://www.w3.org/2000/svg" 
+      viewBox="0 0 24 24" 
+      fill="currentColor"
+    >
+      <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v2h2V7zm0 4h-2v6h2v-6z"/>
+    </svg>
+   {{this.description}}
+  </div>
+</div>
+
+                </div>
+
+             {{#if this.urlParams}}
+    <div class="mb-3" style="margin-top:20px">
+     
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>URL Parameter</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each this.urlParams}}
+                    <tr>
+                        <td><code>{{this}}</code></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+{{/if}}
+
+{{#if this.params}}
+    <div class="mb-3">
+        <h5>Query Parameters</h5>
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each this.params}}
+                    <tr>
+                        <td><code>{{this.key}}</code></td>
+                        <td><code>{{this.value}}</code></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+{{/if}}
+
+{{#if this.headers}}
+    <div class="mb-3">
+        <h5>Headers</h5>
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each this.headers}}
+                    <tr>
+                        <td><code>{{this.key}}</code></td>
+                        <td><code>{{this.value}}</code></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+{{/if}}
+
+{{#if this.requestBody}}
+    <div class="mb-3">
+        <h5>Request Body</h5>
+        <pre class="language-json">{{this.requestBody}}</pre>
+    </div>
+{{/if}}
+
+{{#if this.response}}
+    <div class="mb-3">
+        <h5>Response</h5>
+        <pre class="language-json">{{this.response}}</pre>
+    </div>
+{{/if}}
+
+                
+
+                {{#if ( neq this.responseToken 'No token')}}
+                    <div class="mb-3">
+                        <h5>Authentication Token</h5>
+                        <code>{{this.responseToken}}</code>
+                    </div>
+                {{/if}}
+            </div>
+        {{/each}}
+ 
+</div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Select all parent menu items (Including Institutes)
+    document.querySelectorAll('li > a[data-category]').forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+            let nestedList = link.nextElementSibling;
+            
+            // Toggle only if there's a submenu (nested list)
+            if (nestedList && nestedList.tagName === "UL") {
+                nestedList.style.display = nestedList.style.display === "block" ? "none" : "block";
+            }
+        });
+    });
+
+    // Filtering logic (Ensure it doesn't interfere with toggling)
+    document.querySelectorAll(".submenu-item > a").forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            let category = link.getAttribute("data-category");
+            if (typeof filterByCategory === "function") {
+                filterByCategory(category);
+            }
+        });
+    });
+
+    document.querySelectorAll(".nested-list li a").forEach(nestedLink => {
+        nestedLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            let subcategory = nestedLink.getAttribute("data-category");
+            if (typeof filterBySubcategory === "function") {
+                filterBySubcategory(subcategory);
+            }
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Get current page URL
+    const currentPath = window.location.pathname;
+    
+    // Select the buttons
+    const editBtn = document.getElementById("editBtn");
+    const saveBtn = document.getElementById("saveBtn");
+
+    // Hide buttons if the user is on /api_doc
+    if (currentPath === "/api_doc") {
+        if (editBtn) editBtn.style.display = "none";
+        if (saveBtn) saveBtn.style.display = "none";
+    }
+});
+
+function enableEdit() {
+    let nameField = document.getElementById("nameField");
+    let methodField = document.getElementById("methodField");
+    let routeField = document.getElementById("routeField");
+
+    if (!nameField || !methodField || !routeField) {
+        console.error("❌ One or more fields not found!");
+        return;
+    }
+
+    document.getElementById("editBtn").style.display = "none";
+    document.getElementById("saveBtn").style.display = "inline-block";
+
+    nameField.contentEditable = true;
+    methodField.contentEditable = true;
+    routeField.contentEditable = true;
+
+    nameField.style.border = "1px solid #ccc";
+    methodField.style.border = "1px solid #ccc";
+    routeField.style.border = "1px solid #ccc";
+}
+
+
+function saveChanges(id) {
+    let nameField = document.getElementById("nameField");
+    let methodField = document.getElementById("methodField");
+    let routeField = document.getElementById("routeField");
+
+    if (!nameField || !methodField || !routeField) {
+        console.error("❌ One or more fields not found!");
+        return;
+    }
+
+    const updatedData = {
+        name: nameField.innerText,
+        method: methodField.innerText,
+        route: routeField.innerText
+    };
+
+    fetch(`/api_edit/update-endpoint/1`, {
+        method: 'PUT',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(updatedData)
+    })
+    .then(response => {
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        return response.json();
+    })
+    .then(data => {
+        alert("✅ Updated successfully!");
+
+        document.getElementById("editBtn").style.display = "inline-block";
+        document.getElementById("saveBtn").style.display = "none";
+
+        nameField.contentEditable = false;
+        methodField.contentEditable = false;
+        routeField.contentEditable = false;
+
+        nameField.style.border = "none";
+        methodField.style.border = "none";
+        routeField.style.border = "none";
+    })
+    .catch(error => {
+        console.error("❌ Error updating:", error);
+        alert("❌ Update failed! Check console for details.");
+    });
+}
+
+
+ function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Copied to clipboard!");
+    }).catch(err => {
+      console.error("Error copying text: ", err);
+    });
+  }
+
+// Function to filter by category (submenu)
+function filterByCategory(category) {
+    document.querySelectorAll('.endpoint').forEach(endpoint => {
+        let endpointCategory = endpoint.querySelector('p strong')?.textContent.toLowerCase().trim();
+
+        if (endpointCategory && endpointCategory.includes(category.toLowerCase())) {
+            endpoint.style.display = 'block';
+        } else {
+            endpoint.style.display = 'none';
+        }
+    });
+}
+
+//  Function to filter by subcategory (nested list)
+function filterBySubcategory(subcategory) {
+    document.querySelectorAll('.endpoint').forEach(endpoint => {
+        let endpointSubcategory = endpoint.querySelector('.search-val')?.textContent.toLowerCase().trim();
+
+        if (endpointSubcategory && endpointSubcategory.includes(subcategory.toLowerCase())) {
+            endpoint.style.display = 'block';
+        } else {
+            endpoint.style.display = 'none';
+        }
+    });
+}
+
+//  Function to filter endpoints based on the third word in the API name
+function filterByThirdWord(thirdWord) {
+    document.querySelectorAll('.endpoint').forEach(endpoint => {
+        let endpointName = endpoint.querySelector('h3 strong')?.textContent.toLowerCase().trim();
+
+        if (endpointName) {
+            let nameParts = endpointName.split(' '); // Split API name into words
+            let thirdName = nameParts.length >= 3 ? nameParts[2] : ''; // Get third word
+
+            if (thirdName && thirdName.includes(thirdWord.toLowerCase())) {
+                endpoint.style.display = 'block';
+            } else {
+                endpoint.style.display = 'none';
+            }
+        }
+    });
+}
+
+// ✅ Example usage (call this function when needed, passing the third word to filter)
+function applyThirdWordFilter() {
+    let thirdWord = prompt("Enter third word to filter:");
+    if (thirdWord) {
+        filterByThirdWord(thirdWord);
+    }
+}
+
+function showOverview() {
+    document.getElementById('overview-section').style.display = 'block';
+        document.getElementById('api-image').style.display = 'none';
+    document.querySelectorAll('.endpoint, .sidebar-content').forEach(el => el.style.display = 'none');
+    document.getElementById('searchInput').style.display = 'none';
+  }
+  function showAllEndpoints() {
+    document.getElementById('overview-section').style.display = 'block';
+    document.getElementById('api-image').style.display = 'block';
+    document.querySelectorAll('.endpoint').forEach(el => el.style.display = 'block');
+    document.querySelectorAll('.sidebar-content').forEach(el => el.style.display = 'block');
+    const searchBox = document.getElementById('searchInput');
+    searchBox.style.display = 'block';
+    searchBox.value = '';
+    filterEndpoints();
+
+
+  }
+
+  function filterEndpoints() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase().trim();
+    document.querySelectorAll('.endpoint').forEach(endpoint => {
+      let searchText = '';
+
+      const nameElement = endpoint.querySelector('h3 strong');
+      if (nameElement) searchText += nameElement.textContent.toLowerCase() + ' ';
+      
+      const methodElement = endpoint.querySelector('.endpointDetails span strong');
+      if (methodElement) searchText += methodElement.textContent.toLowerCase() + ' ';
+
+      const textElements = endpoint.querySelectorAll('p, code');
+      textElements.forEach(element => {
+        searchText += element.textContent.toLowerCase() + ' ';
+      });
+
+      endpoint.style.display = searchText.includes(searchInput) ? 'block' : 'none';
+    });
+
+    // Show all endpoints if search is empty
+    if (searchInput === '') {
+      document.querySelectorAll('.endpoint').forEach(endpoint => {
+        endpoint.style.display = 'block';
+      });
+    }
+  }
+
+
+
+
+</script>
+
+</body>
+</html>

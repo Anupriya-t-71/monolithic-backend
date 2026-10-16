@@ -1,0 +1,1444 @@
+[{
+
+  "id": 1,
+  "identity": "dashboard",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_dashboard"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/dashboard"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 2,
+
+  "identity": "Branches",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_branches"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_branches"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_branches"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_branches"
+  },
+  "urls": [
+      "/branch-management/branches"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 3,
+
+  "identity": "Branch Details",
+  "create_permission": {
+      "permission": null,
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_branch_details"
+  },
+  "update_permission": {
+      "permission": null,
+      "code": null
+  },
+  "delete_permission": {
+      "permission": null,
+      "code": null
+  },
+  "urls": [
+      "/branch-management/branches/:id"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 4,
+
+  "identity": "Groups",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_institute_group"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_group"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_group"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_institute_group"
+  },
+  "urls": [
+      "/user-management/groups",
+      "/user-management/groups/add",
+      "/user-management/groups/:id/edit",
+      "inst_perm_group_delete"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 5,
+
+  "identity": "Group Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_group_details"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/user-management/groups/:id"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 6,
+
+  "identity": "Users",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_institute_user"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_user"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_user"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_institute_user"
+  },
+  "urls": [
+      "/user-management/admin-users"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 7,
+
+  "identity": "User Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_user_details"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_user_details"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/user-management/admin-users/:id"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 8,
+
+  "identity": "Categories",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_institute_category"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_category"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_category"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_institute_category"
+  },
+  "urls": [
+      "/course-management/categories"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 9,
+
+  "identity": "Courses",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_institute_course"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_course"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_course"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/course-management/courses",
+      "/course-management/courses/add",
+      ""
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 10,
+
+  "identity": "Course Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_course_details"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_course_details"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_institute_course_details"
+  },
+  "urls": [
+      "/course-management/courses/:id",
+      "/course-management/courses/:id/edit"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 11,
+
+  "identity": "Study Materials",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_institute_study_materials"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_study_materials"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_study_materials"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_institute_study_materials"
+  },
+  "urls": [
+      "/content-management/study-materials"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 12,
+
+  "identity": "Course Notes",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_institute_course_notes"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_course_notes"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_course_notes"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_institute_course_notes"
+  },
+  "urls": [
+      "/content-management/course-notes"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 13,
+
+  "identity": "Course Modules",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_institute_course_modules"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_course_modules"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_course_modules"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_institute_course_modules"
+  },
+  "urls": [
+      "/content-management/course-modules"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 14,
+
+  "identity": "TeachingStaffs",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_institute_teaching_staffs"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_teaching_staffs"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_teching_staffs"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": null
+  },
+  "urls": [
+      "/staff-management/teaching-staffs",
+      "/staff-management/teaching-staffs/add"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 15,
+
+  "identity": "TeachingStaff Details",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_staff_details"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_staff_details"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_staff_details"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_staff_details"
+  },
+  "urls": [
+      "/staff-management/teaching-staffs/:id",
+      "/staff-management/teaching-staffs/:id/edit"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 16,
+
+  "identity": "Non TeachingStaffs",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_non_teaching_staffs"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_non_teaching_staffs"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_non_teaching_staffs"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq"
+  },
+  "urls": [
+      "/staff-management/non-teaching-staffs",
+      "/staff-management/non-teaching-staffs/add"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 17,
+
+  "identity": "Non TeachingStaff Details",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_non_teaching_staff_details"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_non_teaching_staff_details"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_non_teaching_staff_details"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_non_teaching_staff_details"
+  },
+  "urls": [
+      "/staff-management/non-teaching-staffs/:id",
+      "/staff-management/non-teaching-staffs/:id/edit"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 18,
+
+  "identity": "Students",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_students"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_students"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_student_status"
+  },
+  "delete_permission": {
+      "permission":
+          "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu"
+
+  },
+  "urls": [
+      "/student-management/students",
+      "/student-management/students/add"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 19,
+
+  "identity": "Student Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_student_details"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_student_details"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_student_details"
+  },
+  "urls": [
+      "/student-management/students/:id",
+      "/student-management/students/:id/edit"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 20,
+
+  "identity": "Batches",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_batches"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_batches"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_batches"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_batches"
+  },
+  "urls": [
+      "/batch-management/batches",
+      "/batch-management/batches/add",
+      "/batch-management/batches/:id/edit"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 21,
+
+  "identity": "Batch Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_batch_details"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/batch-management/batches/:id"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 22,
+
+  "identity": "Offline Classes",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_offline_classes"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_offline_classes"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_offline_classes"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_offline_classes"
+  },
+  "urls": [
+      "/class-management/offline-classes"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+
+  "id": 23,
+
+  "identity": "OfflineClass Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_offline_class_details"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/class-management/offline-classes/:id"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 24,
+
+  "identity": "Live Classes",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_live_classes"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_live_classes"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_live_classes"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_live_classes"
+  },
+  "urls": [
+      "/class-management/live-classes"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 25,
+
+  "identity": "LiveClass Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_live_classes_details"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/class-management/live-classes/:id"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 26,
+
+  "identity": "Student Attendances",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_student_attendances"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_student_attendances"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/attendance-management/student-attendances"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 27,
+
+  "identity": "Student Attendances Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_student_attendance_details"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/attendance-management/student-attendances/:id"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 28,
+
+  "identity": "TeachingStaff Attendances",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_teaching_staff_attendance"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/attendance-management/teaching-staff-attendances"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 29,
+
+  "identity": "TeachingStaff Attendance Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_teaching_staff_attendance_details"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/attendance-management/teaching-staff-attendances/:id"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 30,
+
+  "identity": "NonTeachingStaff Attendances",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_view_non_teaching_staff_attendance"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_non_teaching_staff_attendance"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/attendance-management/non-teaching-staff-attendances"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 31,
+
+  "identity": "Fees",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_fees_payment_management_create"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_fees_payment_management_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_fees_payment_management_update"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_fees_payment_management_delete"
+  },
+  "urls": [
+      "/payment-management/student-fees"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 32,
+
+  "identity": "Student Fee Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_fees_details_payment_management_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 33,
+
+  "identity": "staff_salaries",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_staff_salaries_create"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_staff_salaries_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_staff_salaries_update"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_staff_salaries_delete"
+  },
+  "urls": [
+      "/payment-management/staff-salaries"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 34,
+
+  "identity": "Staff Salary Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_staff_salary_details_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 35,
+
+  "identity": "Subscriptions",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_subscriptions_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_subscriptions_update"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/payment-management/subscriptions"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 36,
+
+  "identity": "Subscription Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_subscription_details_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 37,
+
+  "identity": "Student Fees",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_fees_refund_management_create"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_fees_refund_management_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_fees_refund_management_update"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_fees_refund_management_delete"
+  },
+  "urls": [
+      "/refund-management/student-fees"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 38,
+
+  "identity": "Student Notifications",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_notification_create"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_notification_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/notification-management/student-notifications"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 39,
+
+  "identity": "All Notifications",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_all_notification_create"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_all_notification_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/notification-management/all-notifications"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 40,
+
+  "identity": "Student Certificates",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_certificates_create"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_certificates_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_certificates_update"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_certificates_delete"
+  },
+  "urls": [
+      "/certificate-management/student-certificates"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 41,
+
+  "identity": "Student Certificate Details",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_certificates_details_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq"
+  },
+  "urls": [],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 42,
+  "identity": "Staff IdCards",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_staff_id_cards_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_staff_id_cards_update_status"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq"
+  },
+  "urls": [
+      "/id-card-management/staff-id-cards"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 43,
+
+  "identity": "Help Faqs",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_help_faqs_support_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/help-center/help-faqs"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 44,
+
+  "identity": "Faq Categories",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_institute_faq_categories"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_faq_categoreis"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_faq_categories"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_institute_faq_categories"
+  },
+  "urls": [
+      "faq-management/faq-categories"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 45,
+
+  "identity": "Faqs",
+  "create_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_create_institute_faqs"
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_read_institute_faqs"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_faqs"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_delete_institute_faqs"
+  },
+  "urls": [
+      "faq-management/faqs"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 46,
+
+  "identity": "Community",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": "can_read_institute_community"
+  },
+  "update_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/community-management/communities"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 47,
+
+  "identity": "Student IdCards",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": "can_read_institute_student_id_cards"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_student_id_cards"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "faq-management/faqs"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 48,
+
+  "identity": "Staff Notifications",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": "can_read_institute_staff_notifications"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "can_update_institute_staff_notifications"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/notification-management/staff-notifications"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 49,
+
+  "identity": "Student Tickets",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_ticket_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_ticket_resolve"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/ticket-management/student-tickets",
+      "/ticket-management/student-ticket"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 50,
+
+  "identity": "staff_tickets",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_staff_ticket_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_staff_ticket_resolve"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/ticket-management/staff-tickets",
+      ""
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+},
+{
+  "id": 51,
+
+  "identity": "student_idcards",
+  "create_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "read_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_id_cards_view"
+  },
+  "update_permission": {
+      "permission": "$2a$12$H9pZ8mcflz2hZz6tXJpzZeJbWUPwE.AxcUBiHZtA5v57AgD8gXMOu",
+      "code": "inst_perm_student_id_cards_update_status"
+  },
+  "delete_permission": {
+      "permission": "$2a$12$wNgelLieILzlC2AyPBjxzODIrIFQPOqQisqyRt8tducEJTN9ETBJq",
+      "code": null
+  },
+  "urls": [
+      "/id-card-management/student-id-cards"
+  ],
+  "role": 1,
+  "is_active": true,
+  "is_delete": false
+
+}]

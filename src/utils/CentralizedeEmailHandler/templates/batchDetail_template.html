@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Batch Details</title>
+    <style>
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif; }
+        .header { text-align: center; padding: 10px 0; }
+        .content { margin: 20px 0; }
+        .footer { text-align: center; padding: 10px 0; font-size: 12px; color: #888; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {{#if isStudent}}
+        <div class="header">
+            <h1>Welcome to Your New Batch, {{name}}!</h1>
+        </div>
+        <div class="content">
+            <p>Dear {{name}},</p>
+            <p>We are excited to inform you that you have been enrolled in the following batch:</p>
+            <p><strong>Batch Name:</strong> {{batchName}}</p>
+            <p><strong>Course:</strong> {{courseName}}</p>
+            <p><strong>Instructor:</strong> {{instructorName}}</p>
+        </div>
+        
+           {{/if}}
+           {{#if isInstructor}}
+       
+           <div class="header">
+            <h1>New Batch Assigned, {{instructorName}}!</h1>
+        </div>
+        <div class="content">
+            <p>Dear {{instructorName}},</p>
+            <p>You have been assigned to the following batch:</p>
+            <p><strong>Batch Name:</strong> {{batchName}}</p>
+            <p><strong>Course:</strong> {{courseName}}</p>
+            <p><strong>Students:</strong> {{studentNames}}</p>
+            <p>Best regards,<br>The eflow Team</p>
+        </div>
+           {{/if}}
+        <div class="footer">
+            <p>&copy; 2023 eflow. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
