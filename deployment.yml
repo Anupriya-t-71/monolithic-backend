@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: eflow-Deployment
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: eflow-backend
+ template:
+  metadata:
+   labels:
+    app: eflow-backend
+  spec:
+   containers:
+    - name: eflow-backend
+      image:
+      ports:
+       - containerPort: 3000     
