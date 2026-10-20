@@ -1,48 +1,53 @@
 pipeline {
-    agent any
-
-    environment {
-        IMAGE_NAME = 'app-backend'
-        CONTAINER_NAME = 'backend-contain'
-        EC2_IP = '100.53.248.149'
-    }
-
+    agent any 
     stages {
-        stage('Checkout') {
+        stage('checkout') {
             steps {
-                git branch: 'main',
-                    credentialsId: 'git_creds',
-                    url: 'https://github.com/vijishvk/E-flow-Backend.git'
+              checkout scmGit(branches: [[name: '*/anu']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token', url: 'https://github.com/Anupriya-t-71/monolithic-backend.git']])
             }
         }
-
-        stage('Deploy to EC2') {
+        stage('sonarqube analysis') {
+            environment {
+                scannerHome = tool 'sonar-scanner'
+            }
             steps {
-                sshagent(['ec2_creds']) {
+                withSonarQubeEnv(
+                    credentialsId: 'sonarqube-token',
+                    installationName: 'SonarQube'
+                ) {
                     sh '''
-                        ssh -A -o StrictHostKeyChecking=no ubuntu@${EC2_IP} "set -e && \
-                            rm -rf /home/ubuntu/backend && \
-                            mkdir -p /home/ubuntu/backend && \
-                            cd /home/ubuntu/backend && \
-                            git clone https://github.com/vijishvk/E-flow-Backend.git && \
-                            cd /home/ubuntu/backend/E-flow-Backend && \
-                            (docker stop ${CONTAINER_NAME} || true) && \
-                            (docker rm ${CONTAINER_NAME} || true) && \
-                            (docker rmi ${IMAGE_NAME} || true) && \
-                            docker build -t ${IMAGE_NAME} . && \
-                            docker run -d -p 3000:3000 --name ${CONTAINER_NAME} ${IMAGE_NAME}"
+                    ${scannerHome}/bin/sonar-scanner \
+                    -Dsonar.projectKey=monolithic \
+                    -Dsonar.projectName=monolithic \
+                    -Dsonar.sources=. \
+                    -Dsonar.host.url=http://localhost:9000
                     '''
+
                 }
             }
         }
-    }
-
-    post {
-        success {
-            echo "Backend deployed successfully"
+        stage('quality gate') {
+            steps {
+             waitForQualityGate abortPipeline: true, credentialsId: 'sonarqube-token'
+            }
         }
-        failure {
-            echo "Failed"
+        stage('push images to harbor') {
+            steps {
+              withCredentials([usernamePassword(credentialsId: 'harbor-credentials', passwordVariable: 'HARBOR_TOKEN', usernameVariable: 'HARBOR_USER')]) {
+              sh '''
+              docker build -t localhost:8090/monolithic/eflow-backend:1.0 . &&
+              docker push localhost:8090/monolithic/eflow-backend:1.0
+              '''
+}
+            }
+        }
+        stage('deploy on kubernetes') {
+            steps {
+                sh '''
+                kubectl apply -f deployment.yml && 
+                kubectl apply -f service.yml
+                '''
+            }
         }
     }
 }
