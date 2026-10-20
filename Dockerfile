@@ -1,15 +1,7 @@
-FROM node:20
- 
-WORKDIR /app
- 
+FROM node:22
+WORKDIR app/
 COPY package*.json ./
-RUN npm config set registry https://registry.npmjs.org/
-RUN npm cache clean --force
-RUN rm -rf node_modules package-lock.json
-RUN npm install --legacy-peer-deps --no-audit --no-fund
- 
-COPY . .
- 
+RUN npm install
+COPY . . 
 EXPOSE 3000
- 
-CMD ["npm", "start"]
+CMD ["npm","start"]
