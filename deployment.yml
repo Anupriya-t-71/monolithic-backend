@@ -14,6 +14,6 @@ spec:
   spec:
    containers:
     - name: eflow-backend
-      image:
+      image: localhost:8090/monolithic/eflow-backend:1.0
       ports:
        - containerPort: 3000     
